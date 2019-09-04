@@ -5,7 +5,6 @@ People who want a visual of their eating habits and an easy way to track meals. 
 &nbsp;
 
 
-
 ## _**Definition statement ("i want to create a web app that...")**_
 I want to create a web app that allows you to take photos of your meals instead of writing everything out like other apps. You can type out the calories but you don't have to. If you do, it calculates the total at the bottom. The photos you take are in a grid and you can set the number of meals you have. It lets you see everything you ate that day.
 
