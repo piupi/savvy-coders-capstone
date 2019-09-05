@@ -20,7 +20,7 @@ It's a food diary that lets you see all of your meals at a glance. It uses pictu
 &nbsp;
 
 ## _**Outline of the content**_
-### _Camera Page_
+### Camera Page
 * The user will mostly be opening the app just to quickly add another meal, so the camera is the first thing that opens. After a photo is taken, the number keyboard comes up and the user can type the calories. 
 
 * The user finishes this step by pressing a ✓. The user can also be like nevermind and press an X to go to Grid View or just close the app.
@@ -28,7 +28,7 @@ It's a food diary that lets you see all of your meals at a glance. It uses pictu
 * I think there should be an option to import a photo too.
 
 
-### _Main Page / Grid View (I call it that in my head)_
+### Main Page / Grid View (I call it that in my head)
 * The main part of this page is the grid of photos. The photo the user just took appears in the first available square. The time the photo was taken and the calorie count is displayed in the corners of the photo. 
 
 * There is a calorie total at the bottom of the page. 
@@ -41,14 +41,14 @@ It's a food diary that lets you see all of your meals at a glance. It uses pictu
 
 
 
-### _Editing Page / Individual Photo View_
+### Editing Page / Individual Photo View
 * If the user wants to retake an image, delete a photo/entry, change the time, or change the calories, they can do so by tapping on a photo. This takes the user to the Editing Page.
 
-### _Calendar_
+### Calendar
 * When a user marks a day as good or bad, the green or red days show on the Calendar. This gives the user a visual of how they did overall that month. The user can swipe to check previous months or tap to view their food on a specific date.
 
 
-### _Settings_
+### Settings
 * Background color & color settings
 * Number of meals? 
 * Body measurements / goals? (might add this feature later on along with weight tracking)
