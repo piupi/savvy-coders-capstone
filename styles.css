@@ -3,53 +3,6 @@ body {
   font-size: 20px;
 }
 
-
-
-/* .boxes {
-  display: grid;
-  flex-direction: column;
-  align-items: center;
-  /* border: 2px solid whitesmoke; */
-  /* grid-template-rows: repeat(2, 1fr);
-} */
-*/
-
-/* .col-s-2 {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100px;
-  display: inline;
-  margin: auto;
-  flex-wrap: wrap;
-  height: 100px;
-  width: 50px;
-  margin: 5px;
-  align-items: center;
-  background: #dfdfdf;
-} */
-
-/* .row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
-} */
-
-
-
-/* input[type="submit"] {
-  text-align: center;
-  font-size: 32px;
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  min-height: 50px;
-  min-width: 50px;
-  border-radius: 30px;
-} */
-
 #calendar {
   margin-top: 4px;
   font-size: 16px;
@@ -122,6 +75,7 @@ body {
   margin: 4px;
 }
 
+/* COMMENCE INDECISIVENESS*/
 
 
 /* For buttons to change color when clicked, should I use :active, :focus, or :hover?  */
@@ -160,20 +114,6 @@ section {
   height: 148px;
   border-radius: 4px;
 }
-/*
-.food {
-  height: 200px;
-}
-#box-1 {
-
-} */
-
-
-/* div .navigation {
-  margin: 4px;
-  padding: 0px;
-  height: 100px;
-} --- unneeded */
 
 
 .navigation {
@@ -188,7 +128,7 @@ section {
 
 /* Media Queries Zone  */
 /* Media query for iphone x -- MOBILE M */
-@media screen and (min-width: 375px) {
+/* @media screen and (min-width: 375px) {
   .boxes {
     margin: 27px;
     margin-top: 0px;
@@ -228,19 +168,19 @@ section {
 
   .navigation {
     margin-left: 33px;
-  }
+  } */
 
 
   /* Total and navigation margins should match margin of .boxes */
 
-  @media screen and (min-width: 500px) {
+  /* @media screen and (min-width: 500px) {
     .boxes {
       margin: 0px;
       margin-top: 0px;
       margin-bottom: 0px;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr; /*maybe start with this instead of the minmax thing*/
-      grid-gap: 8px;
+      /* grid-gap: 8px;
       grid-template-rows: auto;
     }
 
@@ -256,7 +196,7 @@ section {
 
     .navigation {
       margin-left: 0px;
-    }
+    } */ */
 
 
   /* 426px is when i want it to go 3 boxes wide. idk how to alter the HTML and do that? or might have to use flex wrap */
@@ -272,3 +212,102 @@ section {
 /*TODO look at most common screen sizes to add more media queries
 /*TODO change to 2x3 grid for vertical ipad!! duh
 /*TODO check if theres a way to make the boxes always perfectly square at any screen size? without bootstrap
+
+
+
+/*Trying a new way to make boxes. Everything above here is previous code, don't delete.*/
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #ffffff;
+  border: 0px;
+}
+.shoebox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-gap: 8px;
+}
+img {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+}
+
+
+/* IPhone x media query */
+@media screen and (min-width: 375px) {
+  .shoebox {
+    margin: 0px 27px;
+  }
+
+  #total {
+    margin-right: 27px;
+  }
+
+  .navigation {
+    margin-left: 27px;
+  }
+
+
+
+
+/*MEDIA QUERY TIME*/
+@media screen and (min-width: 600px) {
+  * {
+      box-sizing: border-box;
+
+  }
+  body {
+    background: #ffffff;
+    border: 0px;
+}
+  .shoebox {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 8px;
+    margin: 0px 8%;
+  }
+  img {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+  }
+
+  #total {
+    margin-right: 8%;
+  }
+
+  .navigation {
+    margin-left: 8%;
+  }
+}
+
+
+
+
+
+@media screen and (min-width: 900px) {
+  .shoebox {
+    margin: 0px 24%;
+  }
+  #total {
+    margin-right: 24%;
+  }
+
+  .navigation {
+    margin-left: 24%;
+  }
+}
+
+/*iPad media queries*/
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px)
+and (orientation : portrait) {
+  .shoebox{
+    grid-template-columns: 1fr 1fr;
+}
+
+
