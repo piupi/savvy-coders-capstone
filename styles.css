@@ -1,0 +1,274 @@
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+}
+
+
+
+/* .boxes {
+  display: grid;
+  flex-direction: column;
+  align-items: center;
+  /* border: 2px solid whitesmoke; */
+  /* grid-template-rows: repeat(2, 1fr);
+} */
+*/
+
+/* .col-s-2 {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100px;
+  display: inline;
+  margin: auto;
+  flex-wrap: wrap;
+  height: 100px;
+  width: 50px;
+  margin: 5px;
+  align-items: center;
+  background: #dfdfdf;
+} */
+
+/* .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+} */
+
+
+
+/* input[type="submit"] {
+  text-align: center;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  min-height: 50px;
+  min-width: 50px;
+  border-radius: 30px;
+} */
+
+#calendar {
+  margin-top: 4px;
+  font-size: 16px;
+  display: flex;
+  display: inline;
+  justify-content: end;
+
+}
+#settings {
+  margin-top: 4px;
+  font-size: 16px;
+  display: flex;
+  display: inline;
+  justify-content: end;
+}
+
+#todaysDate {
+  text-align: center;
+  color: #26bba6;
+  text-transform: uppercase;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+
+
+
+#add {
+  background-color: white;
+  border: none;
+  color: #26bba6;
+  display: block;
+  margin: auto;
+}
+
+#add:hover {
+  color:#dfdfdf;
+  outline: none;
+}
+
+#calendar {
+  background-color: white;
+  border: none;
+  color: #BCC4C0;
+  display: inline;
+  align-items: center;
+}
+
+#calendar:hover {
+  color:#dfdfdf;
+  outline: none;
+}
+
+#settings {
+  background-color: white;
+  border: none;
+  color: #BCC4C0;
+
+}
+
+#settings:hover {
+  color:#dfdfdf;
+  outline: none;
+}
+
+
+#total {
+  margin: 4px;
+}
+
+
+
+/* For buttons to change color when clicked, should I use :active, :focus, or :hover?  */
+
+
+
+/* Trying grid-template-columns which is supposed to be cool */
+
+.boxes {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); */
+  grid-template-columns: 1fr 1fr; /*maybe start with this instead of the minmax thing*/
+  grid-gap: 8px;
+  grid-template-rows: auto;
+  /* object-fit: cover;  --- put this if images are stretching out gross*/
+  /* height: 200px; */
+
+  /* below is for iphone x, make a media query. also move cal total to the right! */
+/*
+  margin: 27px;
+  margin-top: 0px;
+  margin-bottom: 0px; */
+
+}
+
+.food-picture {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+section {
+  background-color: #dfdfdf;
+  height: 148px;
+  border-radius: 4px;
+}
+/*
+.food {
+  height: 200px;
+}
+#box-1 {
+
+} */
+
+
+/* div .navigation {
+  margin: 4px;
+  padding: 0px;
+  height: 100px;
+} --- unneeded */
+
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+
+
+/* Using break-inside: avoid; will stop your cards from being split across multiple columns. */
+
+/* Media Queries Zone  */
+/* Media query for iphone x -- MOBILE M */
+@media screen and (min-width: 375px) {
+  .boxes {
+    margin: 27px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  body {
+    margin: 8px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  #total {
+    margin-right: 27px;
+  }
+
+  .navigation {
+    margin-left: 27px;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .boxes {
+    margin: 33px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  body {
+    margin: 27px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  #total {
+    margin-right: 33px;
+  }
+
+  .navigation {
+    margin-left: 33px;
+  }
+
+
+  /* Total and navigation margins should match margin of .boxes */
+
+  @media screen and (min-width: 500px) {
+    .boxes {
+      margin: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr; /*maybe start with this instead of the minmax thing*/
+      grid-gap: 8px;
+      grid-template-rows: auto;
+    }
+
+    body {
+      margin: 20px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    #total {
+      margin-right: 0px;
+    }
+
+    .navigation {
+      margin-left: 0px;
+    }
+
+
+  /* 426px is when i want it to go 3 boxes wide. idk how to alter the HTML and do that? or might have to use flex wrap */
+  /*maybe just apply these to the whole body and not just .boxes. so cals and nav aligns*/
+}
+
+
+/*TODO add more media queries for different sizes (tablet, desktop)
+/*TODO create the other pages & their media queries, should be easier just copy paste
+/*TODO if there's time try to link pages to each other with icons, editing page, plus sign etc.
+/*TODO make sure there's possibility to do 12 boxes
+/*TODO make sure theres actually a way for added photos to show up in grid
+/*TODO look at most common screen sizes to add more media queries
+/*TODO change to 2x3 grid for vertical ipad!! duh
+/*TODO check if theres a way to make the boxes always perfectly square at any screen size? without bootstrap
