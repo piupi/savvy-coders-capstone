@@ -85,6 +85,8 @@ body {
   color: #BCC4C0;
   display: flex;
   justify-content: space-around;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 #retake:hover {
@@ -295,8 +297,15 @@ div .time {
 /*Editing Page CSS*/
 .entry {
   display: grid;
+  /* display: flex; */
   margin: 5% 10%;
   margin-top: 50px;
+  max-width: 400px;
+}
+
+main {
+  display: grid;
+  justify-items: center;
 }
 
 
