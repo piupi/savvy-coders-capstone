@@ -29,9 +29,6 @@ body {
   margin-bottom: 8px;
 }
 
-
-
-
 #add {
   background-color: white;
   border: none;
@@ -50,7 +47,6 @@ body {
   border: none;
   color: #BCC4C0;
   display: inline;
-  /* align-items: center; */
 }
 
 #calendar:hover {
@@ -70,14 +66,11 @@ body {
   outline: none;
 }
 
-
-
 #total {
   margin: 4px;
 }
 
 /*Editing Page CSS*/
-
 #back {
   color: #26bba6;
   margin: 4%;
@@ -98,7 +91,7 @@ body {
 #delete:hover {
   color: #d7d7d7;
 }
-
+/*Done w editing page navigation*/
 
 .navigation {
   display: flex;
@@ -119,15 +112,11 @@ a:focus {
 button:focus {
   outline: none;
 }
+
 /* COMMENCE INDECISIVENESS*/
-
-
 /* For buttons to change color when clicked, should I use :active, :focus, or :hover?  */
 
-
-
 /* Trying grid-template-columns which is supposed to be cool */
-
 .boxes {
   display: grid;
   /* grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); */
@@ -160,11 +149,7 @@ section {
 }
 
 
-
-
-
-/* Using break-inside: avoid; will stop your cards from being split across multiple columns. */
-
+/*Below are abandoned media queries I can't let go of yet*/
 /* Media Queries Zone  */
 /* Media query for iphone x -- MOBILE M */
 /* @media screen and (min-width: 375px) {
@@ -243,25 +228,8 @@ section {
 }
 
 
-/*TODO add more media queries for different sizes (tablet, desktop)
-/*TODO create the other pages & their media queries, should be easier just copy paste
-/*TODO if there's time try to link pages to each other with icons, editing page, plus sign etc.
-/*TODO make sure there's possibility to do 12 boxes
-/*TODO make sure theres actually a way for added photos to show up in grid
-/*TODO look at most common screen sizes to add more media queries
-/*TODO change to 2x3 grid for vertical ipad!! duh
-/*TODO check if theres a way to make the boxes always perfectly square at any screen size? without bootstrap
-*/
-
-
-
-
-
-
-
-
-
 /*Trying a new way to make boxes. Everything above here is previous code. I'll clean it up later*/
+/* After doing the whole entire section below, I realize I could've just used img width: 50% float: left ... ok great */
 
 * {
   box-sizing: border-box;
@@ -335,7 +303,7 @@ main {
 
 
 
-/*MEDIA QUERIES ONLY below - some are broken. can't close them with curly braces or it messes everything up*/
+/*MEDIA QUERIES ONLY below - some are broken. can't close them with curly braces or it messes EVERYTHING up. By everything I mean the alignment of the grid and boxes.*/
 
 /* IPhone x media query */
 @media screen and (min-width: 375px) {
