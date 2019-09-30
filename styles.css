@@ -110,6 +110,15 @@ body {
   max-width: 400px;
   margin: 0 auto;
 }
+
+/*Removing ugly blue border after clicking icons*/
+a:focus {
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
 /* COMMENCE INDECISIVENESS*/
 
 
