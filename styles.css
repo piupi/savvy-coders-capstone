@@ -71,6 +71,7 @@ body {
 }
 
 
+
 #total {
   margin: 4px;
 }
@@ -79,6 +80,7 @@ body {
 
 #back {
   color: #26bba6;
+  margin: 4%;
 }
 
 .editing-options {
@@ -95,6 +97,18 @@ body {
 
 #delete:hover {
   color: #d7d7d7;
+}
+
+
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  max-width: 60px;
+}
+
+#placeholder-img {
+  max-width: 400px;
+  margin: 0 auto;
 }
 /* COMMENCE INDECISIVENESS*/
 
@@ -137,11 +151,6 @@ section {
 }
 
 
-.navigation {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
 
 
 
