@@ -50,7 +50,7 @@ body {
   border: none;
   color: #BCC4C0;
   display: inline;
-  align-items: center;
+  /* align-items: center; */
 }
 
 #calendar:hover {
@@ -75,6 +75,25 @@ body {
   margin: 4px;
 }
 
+/*Editing Page CSS*/
+
+#back {
+  color: #26bba6;
+}
+
+.editing-options {
+  color: #BCC4C0;
+  display: flex;
+  justify-content: space-around;
+}
+
+#retake:hover {
+  color: #dfdfdf;
+}
+
+#delete:hover {
+  color: #d7d7d7;
+}
 /* COMMENCE INDECISIVENESS*/
 
 
@@ -212,29 +231,84 @@ section {
 /*TODO look at most common screen sizes to add more media queries
 /*TODO change to 2x3 grid for vertical ipad!! duh
 /*TODO check if theres a way to make the boxes always perfectly square at any screen size? without bootstrap
+*/
 
 
 
-/*Trying a new way to make boxes. Everything above here is previous code, don't delete.*/
+
+
+
+
+
+
+/*Trying a new way to make boxes. Everything above here is previous code. I'll clean it up later*/
 
 * {
   box-sizing: border-box;
 }
+
 body {
   background: #ffffff;
   border: 0px;
 }
+
 .shoebox {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   grid-gap: 8px;
 }
+
 img {
   display: block;
   width: 100%;
   border-radius: 4px;
 }
 
+div .box{
+  position: relative;
+  display: inline-block;
+}
+
+div .cals {
+  position: absolute;
+  bottom: 4%;
+  right: 4%;
+  color: #26bba6;
+  background-color: white;
+  border-radius: 4px;
+  padding: 0px 2px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+div .time {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  color: white;
+  text-shadow: -1px 1px 2px #3D4849;
+  border-radius: 4px;
+  padding: 0px 2px;
+  font-size: 16px;
+}
+
+/*Editing Page CSS*/
+.entry {
+  display: grid;
+  margin: 5% 10%;
+  margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+/*MEDIA QUERIES ONLY below - some are broken. can't close them with curly braces or it messes everything up*/
 
 /* IPhone x media query */
 @media screen and (min-width: 375px) {
@@ -249,8 +323,6 @@ img {
   .navigation {
     margin-left: 27px;
   }
-
-
 
 
 /*MEDIA QUERY TIME*/
@@ -285,9 +357,6 @@ img {
 }
 
 
-
-
-
 @media screen and (min-width: 900px) {
   .shoebox {
     margin: 0px 24%;
@@ -300,6 +369,7 @@ img {
     margin-left: 24%;
   }
 }
+
 
 /*iPad media queries*/
 @media only screen
