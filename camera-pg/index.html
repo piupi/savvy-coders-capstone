@@ -16,11 +16,21 @@
   <p>(Pretend your phone's camera is opening)</p>
 <p>This should be what first opens when you go to the app. Or maybe not because its a web app (in that case the main grid page will be first). But it opens your camera to add a new entry. </p>
 
-<input type="file" accept="image/*" capture="camera">
+<input type="file" accept="image/*" capture="camera" hidden="hidden">
 <p>^^not that</p>
+
+<!-- TODO: add into your input!!!! hidden="hidden"
+
+TODO: add fileInput = document.getElementById("the photo name")
+fileInput.click() ?????
+and put that in your event listener
+
+TODO: whatever ur button is attached to now, change it to that  -->
 
 <!-- capture="camera" ????? -->
 
   </body>
   <script src="../scripts.js"></script>
+  <script src="./camera.js"></script>
+
   </html>
