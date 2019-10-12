@@ -4,33 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="camera.js"></script>
   <link rel="stylesheet" href="../styles.css">
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
   <title>Camera Page</title>
+
 </head>
 <body>
   <a href="../index.html" id="back"><i class="fas fa-times fa-lg"></i></a>
-  <p>(Pretend your phone's camera is opening)</p>
+  <!-- <p>(Pretend your phone's camera is opening)</p>
 <p>This should be what first opens when you go to the app. Or maybe not because its a web app (in that case the main grid page will be first). But it opens your camera to add a new entry. </p>
 
-<input type="file" accept="image/*" capture="camera" hidden="hidden">
-<p>^^not that</p>
+<input type="file" accept="image/*" capture="camera" >
+<p>^^not that</p> -->
 
-<!-- TODO: add into your input!!!! hidden="hidden"
+<!--
+  Below is help from rusty
+  add into your input!!!! hidden="hidden"
+  add fileInput = document.getElementById("the photo name")
+  fileInput.click() ?????
+  and put that in your event listener
+  something with onclick
+  whatever ur button is attached to now, change it to that
+  you can determine the height and width of the camera element
+  but it needs to be a square image thooooo
+  capture="camera" ?????
+--!>
 
-TODO: add fileInput = document.getElementById("the photo name")
-fileInput.click() ?????
-and put that in your event listener
 
-TODO: whatever ur button is attached to now, change it to that  -->
+<!-- below is the video stream way
+a canvas element which is consistently being drawn on to
+when you hit take photo it will change the source of the image below
+first part is to get a video stream going
+grab the video stream from the users camera
+  --!>
 
-<!-- capture="camera" ????? -->
+<!--try style=display:none; instead of hidden="hidden"; -->
 
-  </body>
-  <script src="../scripts.js"></script>
-  <script src="./camera.js"></script>
 
+<input type="file" name="imgInput" id="imgInput" accept="image/*" capture="camera"/>
+
+<!-- make it hidden and transfer the click to the + button??!? on main page or make the onclick go to the hidden input element on this page-->
+
+
+</body>
   </html>
+

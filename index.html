@@ -90,7 +90,12 @@
 <div>
 <p id="total" align="right">cal total here</p>
 </div>
-<button class="btn" name="add" id="add" onclick="location.href='./camera-pg/index.html'"><i class="fas fa-plus fa-3x"></i></button>
+<button class="btn" name="add" id="add" id="fa-plus" onclick="clickSimulator()"><i class="fas fa-plus fa-3x"></i></button>
+
+<!--if the clickSimulator ends up not working out, put this back in the onclick: "location.href='./camera-pg/index.html'" -->
+
+<!-- This is the input which I want to use (by clicking +) but hide because it's ugly -->
+<input type="file" name="imgInput" id="imgInput" hidden="hidden" accept="image/*" capture="camera"/>
 
 
 <div class="navigation">
@@ -109,11 +114,10 @@
 <!-- TODO: make login page in settings -->
 <!-- TODO: add placeholder image or blank square instead of image??? idk yet-->
 
-
-
-
 </body>
 <script src="scripts.js"></script>
+<script src="./camera-pg/camera.js"></script>
+
 </html>
 
 
