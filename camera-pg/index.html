@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="camera.js"></script>
+
   <link rel="stylesheet" href="../styles.css">
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet">
@@ -32,25 +32,21 @@
   whatever ur button is attached to now, change it to that
   you can determine the height and width of the camera element
   but it needs to be a square image thooooo
-  capture="camera" ?????
---!>
+  capture="camera" ????? -->
+<!-- <input type="file" name="imgInput" id="imgInput" accept="image/*" capture="camera"/> -->
 
 
 <!-- below is the video stream way
 a canvas element which is consistently being drawn on to
 when you hit take photo it will change the source of the image below
 first part is to get a video stream going
-grab the video stream from the users camera
-  --!>
-
-<!--try style=display:none; instead of hidden="hidden"; -->
+grab the video stream from the users camera -->
 
 
-<input type="file" name="imgInput" id="imgInput" accept="image/*" capture="camera"/>
+<div class="booth">
+  <video id="video" width="400" height="400"></video>
+</div>
 
-<!-- make it hidden and transfer the click to the + button??!? on main page or make the onclick go to the hidden input element on this page-->
-
-
+<script src="camera.js"></script>
 </body>
-  </html>
-
+</html>
