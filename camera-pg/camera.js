@@ -33,25 +33,53 @@
 //navigator.getUserMedia in secure context (https), otherwise its undefined
 
 
-(function(){
-  const video = document.getElementById('video');
-  const vendorUrl = window.URL || window.webkitURL;
-  //The "or window webkitURL" if window URL isnt available
-  navigator.getMedia = navigator.getUserMedia ||
-  navigator.webkitGetUserMedia ||
-  navigator.mozGetUserMedia ||
-  navigator.msGetUserMedia;
-  //before, below was navigator.getMedia
-  navigator.mediaDevices.getUserMedia({
-    video: true,
-    audio: false
-  }, function(stream) {
-    // video.src = vendorUrl.createObjectURL(stream);
-    //This method no longer works,assign stream to HTMLelement.srcObject
+
+// (function(){
+//   const video = document.getElementById('video');
+//   const vendorUrl = window.URL || window.webkitURL;
+//   //The "or window webkitURL" if window URL isnt available
+//   navigator.getMedia = navigator.getUserMedia ||
+//   navigator.webkitGetUserMedia ||
+//   navigator.mozGetUserMedia ||
+//   navigator.msGetUserMedia;
+//   //before, below was navigator.getMedia
+//   navigator.mediaDevices.getUserMedia({
+//     video: true,
+//     audio: false
+//   }
+//   .then(function(stream){
+//     video.srcObject = stream;
+//     video.play();
+//   })
+//   .catch(function(error) {
+//     console.log(`Error: ${error}`);
+//   }))
+// });
+
+
+// nother try
+const video = document.getElementById('video');
+
+navigator.mediaDevices.getUserMedia({video: true, audio: false})
+
+  .then(function(stream) {
     video.srcObject = stream;
     video.play();
-  }, function(error) {
-    // Error occurred
-    // error.code
+  })
+  .catch(function(err){
+    console.log(`Error: ${err}`);
   });
-})();
+
+  video.addEventListener('canplay', function(e) {
+    if(!streaming) {
+      // set video / canvas height
+      height = video.videoHeight / (video.videoWidth / width);
+
+      video.setAttribute('width', width);
+      video.setAttribute('height', height);
+      canvas.setAttribute('width', width);
+      canvas.setAttribute('height', height);
+
+      streaming = true;
+    }
+  }, false);
