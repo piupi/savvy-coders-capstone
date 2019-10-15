@@ -60,7 +60,7 @@
 // nother try
 const video = document.getElementById('video');
 
-navigator.mediaDevices.getUserMedia({video: true, audio: false})
+navigator.mediaDevices.getUserMedia({video: {facingMode: "environment"}, audio: false, height: 400})
 
   .then(function(stream) {
     video.srcObject = stream;
@@ -73,12 +73,12 @@ navigator.mediaDevices.getUserMedia({video: true, audio: false})
   video.addEventListener('canplay', function(e) {
     if(!streaming) {
       // set video / canvas height
-      height = video.videoHeight / (video.videoWidth / width);
+      // height = video.videoHeight / (video.videoWidth / width);
 
-      video.setAttribute('width', width);
-      video.setAttribute('height', height);
-      canvas.setAttribute('width', width);
-      canvas.setAttribute('height', height);
+      // video.setAttribute('width', width);
+      // video.setAttribute('height', height);
+      // canvas.setAttribute('width', width);
+      // canvas.setAttribute('height', height);
 
       streaming = true;
     }

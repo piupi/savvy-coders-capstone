@@ -299,12 +299,18 @@ main {
 
 /*Camera Page CSS*/
 .booth{
-  width: 400px;
-  height: 400px;
+  width: 280px;
+  height: 280px;
   border: 4px solid #3D4849;
   margin: 0 auto;
+  margin-top: 20%;
+  text-indent: -50px;
+  overflow: hidden;
 }
 
+#video {
+
+}
 
 
 
