@@ -1,11 +1,11 @@
 
-const fileInput = document.getElementById("imgInput");
-fileInput.click();
+// const fileInput = document.getElementById("imgInput");
+// fileInput.click();
 
 //Hiding the ugly file input, and making the + button click the ugly file input button
-const uglyInput = document.getElementById("imgInput");
+const uglyRealInput = document.getElementById("imgInput");
 const plusButton = document.querySelector("button");
-
+const customTxt = document.getElementById("custom-text");
 
 //https://stackoverflow.com/questions/43320231/html5-camera-access-controlling-the-resolution
 
@@ -14,14 +14,25 @@ const plusButton = document.querySelector("button");
 //only if you click the plusButton twice! So I need to try something that'll work on first click
 // function clickSimulator(){
 //   plusButton.addEventListener('click', function(){
-//   uglyInput.click();
+//   uglyRealInput.click();
 //   })
 // }
 
-//This way is more straightforward than the clickSimulator function
+//This way is more straightforward than the clickSimulator function. =
 plusButton.onclick = function(){
-  uglyInput.click();
+  uglyRealInput.click();
 }
+
+uglyRealInput.addEventListener("change", function(){
+  if(uglyRealInput.value) {
+    customTxt.innerHTML = uglyRealInput.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+  } else {
+    customTxt.innerHTML = "No file chosen yet."
+  }
+})
+
+//TODO: Preview image before file upload? Move the uglyRealInput to the camera page.
+//TODO: Then make plusButton go to the CameraPage and press the uglyRealInput
 
 //TODO: Html Media Capture doesn't give you a way to specify size apparently. Need to use getUserMedia / Media Stream / Stream API / WebRTC API. But first, read all the tabs abt Html Media Capture. MDN tells you what to do with the photos once the user has captured them. Read about File API on MDN. If you don't go with getUserMedia, see how to skip the retake/use photo screen. Might have to use PhoneGap Camera framework? Read more about canvas element and how it's related to this.
 
