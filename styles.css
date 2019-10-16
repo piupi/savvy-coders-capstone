@@ -297,20 +297,20 @@ main {
   justify-items: center;
 }
 
-/*Camera Page CSS*/
-.booth{
+/*Camera Page CSS if using WebRTC*/
+/* .booth{
   width: 280px;
   height: 280px;
   border: 4px solid #3D4849;
   margin: 0 auto;
-  margin-top: 20%;
+  margin-top: 80px;
   text-indent: -50px;
   overflow: hidden;
 }
 
 #video {
 
-}
+} */
 
 
 
