@@ -23,11 +23,34 @@ plusButton.onclick = function(){
   uglyRealInput.click();
 }
 
+//Show the file name. Remove this later
 uglyRealInput.addEventListener("change", function(){
   if(uglyRealInput.value) {
     customTxt.innerHTML = uglyRealInput.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
   } else {
     customTxt.innerHTML = "No file chosen yet."
+  }
+})
+
+//Image Preview
+const imgInput = document.getElementById("imgInput");
+const previewContainer = document.getElementById('imgPreview');
+const previewImage = previewContainer.querySelector(".img-preview__img")
+const previewDefaultText = previewContainer.querySelector(".img-preview__default-text")
+
+imgInput.addEventListener("change", function(){
+  const file = this.files[0];
+  console.log(file);
+  if (file) {
+    const reader = new FileReader();
+    previewDefaultText.style.display = "none";
+    previewImage.style.display = "block";
+
+    reader.addEventListener("load", function(){
+      previewImage.setAttribute("src", this.result);
+    });
+    reader.readAsDataURL(file);
+    // or toDataURL???
   }
 })
 
