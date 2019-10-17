@@ -18,6 +18,7 @@ function clickSimulator(){
   })
 }
 
+
 //This way is more straightforward than the clickSimulator function.
 //But only works if the input is on the actual main page wtf
 // plusButton.onclick = function(){
@@ -32,6 +33,11 @@ uglyRealInput.addEventListener("change", function(){
     customTxt.innerHTML = "No file chosen yet."
   }
 })
+//onload??
+
+window.onload = function(){
+  uglyRealInput.click();
+}
 
 //Image Preview
 const imgInput = document.getElementById("imgInput");

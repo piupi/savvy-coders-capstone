@@ -315,10 +315,11 @@ main {
 
 /*IMage PReview css*/
 .img-preview {
+  margin: 0 auto;
   width: 300px;
   height: 300px;
   border: 2px solid #3D4849;
-  margin-top: 15px;
+  margin-top: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -332,6 +333,9 @@ main {
   object-fit: cover;
 }
 
+#custom-text {
+  text-align: center;
+}
 
 
 
