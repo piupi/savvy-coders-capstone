@@ -12,16 +12,17 @@ const customTxt = document.getElementById("custom-text");
 //Need way to make the button lead to input
 //When i click the plus button it should simulate a click on the uglyInput. This works, but
 //only if you click the plusButton twice! So I need to try something that'll work on first click
-// function clickSimulator(){
-//   plusButton.addEventListener('click', function(){
-//   uglyRealInput.click();
-//   })
-// }
-
-//This way is more straightforward than the clickSimulator function. =
-plusButton.onclick = function(){
+function clickSimulator(){
+  plusButton.addEventListener('click', function(){
   uglyRealInput.click();
+  })
 }
+
+//This way is more straightforward than the clickSimulator function.
+//But only works if the input is on the actual main page wtf
+// plusButton.onclick = function(){
+//   uglyRealInput.click();
+// }
 
 //Show the file name. Remove this later
 uglyRealInput.addEventListener("change", function(){

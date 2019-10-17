@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <link rel="stylesheet" href="../styles.css">
+
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
@@ -48,8 +49,17 @@ grab the video stream from the users camera -->
 </div> -->
 
 
+<input type="file" name="imgInput" id="imgInput" hidden="hidden" accept="image/*" capture="camera"/>
+
+<div class="img-preview" id="imgPreview">
+  <span class="img-preview__default-text">Image Preview</span>
+  <img src="" alt="Image Preview" class="img-preview__img">
+</div>
+<span id="custom-text">No file chosen yet.</span>
 
 
+<script src="../scripts.js"></script>
 <script src="camera.js"></script>
+
 </body>
 </html>
