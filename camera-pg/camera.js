@@ -35,9 +35,16 @@ uglyRealInput.addEventListener("change", function(){
 })
 //onload??
 
-window.onload = function(){
+// window.onload = function(){
+//   uglyRealInput.click();
+// }
+
+//Doesnt work on mobile so I'm trying something
+
+window.addEventListener('load', function (){
   uglyRealInput.click();
-}
+  console.log("AAAAAAAAAAAAAH")
+})
 
 //Image Preview
 const imgInput = document.getElementById("imgInput");
