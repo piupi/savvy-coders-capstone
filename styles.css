@@ -272,7 +272,21 @@ div .cals {
   font-weight: bold;
 }
 
-/* TODO{vanessa.krathovik}: Consider using `<time>` tag instead of over-specifying with <div>s. (https://www.w3schools.com/tags/tag_time.asp) */
+/* Below is if I'm sticking with figcaption  */
+figcaption {
+  position: absolute;
+  margin: 0;
+  bottom: 4%;
+  right: 4%;
+  color: #26bba6;
+  background-color: white;
+  border-radius: 4px;
+  padding: 0px 2px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* TODO{vanessa.krathovik}: Consider using `<time>` tag instead of over-specifying with <div> */
 div .time {
   position: absolute;
   top: 2%;
