@@ -1,4 +1,4 @@
 import "@firebase/auth";
 
-import firebase from "./firebase-init";
+import firebase from "./init";
 export default firebase.auth();
