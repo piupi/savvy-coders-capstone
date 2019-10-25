@@ -272,6 +272,7 @@ div .cals {
   font-weight: bold;
 }
 
+/* TODO{vanessa.krathovik}: Consider using `<time>` tag instead of over-specifying with <div>s. (https://www.w3schools.com/tags/tag_time.asp) */
 div .time {
   position: absolute;
   top: 2%;
