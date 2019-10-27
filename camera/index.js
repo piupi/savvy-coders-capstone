@@ -26,8 +26,41 @@ export function handleCameraModal() {
     // It closes once but won't close twice if I give it toggleModal
     // toggleModal(modalBg);
   })
+
+  //WebRTC below
+  const video = document.querySelector("#video");
+  const canvas = document.querySelector("canvas");
+
+  navigator.mediaDevices
+  .getUserMedia({ video:{facingMode: "environment"}, audio: false, height:400 })
+  .then(function(localMediaStream) {
+    video.srcObject = localMediaStream;
+    video.play();
+  })
+  .catch(function(err) {
+    console.log("An error occurred: " + err);
+  });
+
+document.querySelector("#take-pic").addEventListener("click", () => {
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  // changing that to # of pixels squishes image
+
+  // takes pic from webcam
+  canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
+
+  toggleModal(modalBg); // Modal closes after checkmark is clicked
+
+  // const newPic = {
+  //   src: canvas.toDataURL("image/webp"),
+  //   calories: document.querySelector("#caption").value
+  // };
+
+// problem: caption does not appear?
+
 })
 }
+  )}
 
 
 // Adding delete buttons to each pic

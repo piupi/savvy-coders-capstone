@@ -363,7 +363,7 @@ main {
 }
 
 
-/* Modal css */
+/* Modal classes */
 /* Modal BG whites out the background */
 .modal-bg {
   position: fixed;
@@ -391,6 +391,16 @@ main {
   visibility: visible;
   opacity: 1;
 }
+
+/* Video Booth */
+.booth {
+  width: 280px;
+  height: 280px;
+  /* border: 4px solid #3D4849; */
+  text-indent: -50px;
+  overflow: hidden;
+}
+
 
 /*MEDIA QUERIES ONLY below - some are broken. can't close them with curly braces or it messes EVERYTHING up. By everything I mean the alignment of the grid and boxes.*/
 

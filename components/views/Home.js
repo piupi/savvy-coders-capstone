@@ -34,7 +34,7 @@ export default (st) => `
     ${generatePics(st.pics)}
   </div>
   <div>
-    <p id="total" align="right">cal total here</p>
+    <p id="total" align="right">cal total of day here</p>
   </div>
   <button class="plus-btn" name="add" id="add" id="fa-plus"">
     <span class="fas fa-plus fa-3x"></span>
@@ -43,15 +43,24 @@ export default (st) => `
     <button id="settings" type="button" class="fas fa-cog fa-l"></button>
     <button id="calendar" type="button" class="far fa-calendar-alt fa-lg"></button>
   </div>
+  <canvas></canvas>
   <div class="modal-bg is-hiding">
     <div class="modal">
       <span class="fas fa-times fa-lg" id="back"></span>
+      <div class="booth">
+        <video id="video" width="380"></video>
+      </div>
       <p>test modal</p>
+      <div>
+        <label for="caption">calories</label>
+        <input type="text" id="caption"/>
+      </div>
+      <button class="fas fa-check" id="take-pic"></button>
     </div>
   </div>
 `
 // This is where I'm making the modal
-// Might need to wrap this in another modal like "modal-bg" to white out bg
+// Might need to wrap this in another modal like "modal-bg" to grey out bg
 
 
 
