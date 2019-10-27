@@ -3,8 +3,6 @@ import { db } from "../firebase";
 
 const dbCollection = db.collection("pictures");
 
-console.log("Db collection is", dbCollection)
-
 
 // It's a separate function so I can reuse when exiting
 export function toggleModal(modalBg) {
@@ -20,11 +18,11 @@ export function handleCameraModal(st) {
   const closeButton = document.querySelector(".fa-times");
 
   plusButton.addEventListener("click", function() {
-    console.log("+ button clicked");
+    // console.log("+ button clicked");
     toggleModal(modalBg);
 
     closeButton.addEventListener("click", function() {
-      console.log("X button clicked");
+      // console.log("X button clicked");
       modalBg.classList.remove("is-showing");
       // It closes once but won't close twice if .I give it toggleModal
       // toggleModal(modalBg);
@@ -66,16 +64,36 @@ export function handleCameraModal(st) {
         src: canvas.toDataURL("image/webp"),
         calories: document.querySelector("#caption").value
       };
-      console.log(st.pics);
-      st.pics = st.pics.concat([newPic]);
+
       //updating st.pics
       //concat returns new array unlike push
 
       dbCollection.add(newPic)
       .then(docRef => {
-        pic.id = docRef.id;
+        console.log('pic in add is', newPic)
+        newPic.id = docRef.id;
       })
-      .catch(() => (console.log("aaaaaaaa")))
+      .catch((err) => (console.log("aaaaaaaah its an error"), err))
+
+      // dbCollection.get().then(querySnapshot =>
+      //   (st.pics = querySnapshot.docs.map(doc => {
+      //     const pic = doc.data();
+      //     pic.id = doc.id; // or docRef.id?
+      //     return pic;
+          //should i have ID in state Home.js ??
+
+      //   }))
+      // )
+
+      st.pics = st.pics.concat([newPic]);
+
+
+      dbCollection.get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+
+        });
+    });
+
     });
   });
 }
