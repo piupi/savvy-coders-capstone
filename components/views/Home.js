@@ -15,6 +15,7 @@
 
 
 function generatePics(pics) {
+  console.log("pics from generatePics" + pics)
   // use map and join to iterate over the pics
   return pics.map(({src, calories}) => `
     <!-- TODO: Consider simplifying markup and just using <figure> as 'the box.' -->
