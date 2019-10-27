@@ -64,7 +64,9 @@ export function handleCameraModal(st) {
         calories: document.querySelector("#caption").value
       };
       console.log(st.pics);
-      st.pics = st.pics.push(newPic);
+      st.pics = st.pics.concat([newPic]);
+      //updating st.pics
+      //concat returns new array unlike push
 
 
 

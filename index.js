@@ -19,7 +19,8 @@ function render(st = state.Home) {
 
   const proxy = new Proxy(st, {
     set(st, k, v) {
-      console.log("You tried to update state");
+      st[k] = v;
+      render(st);
       return true;
     }
   });
