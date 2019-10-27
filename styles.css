@@ -290,12 +290,22 @@ figcaption {
 div .time {
   position: absolute;
   top: 2%;
-  left: 2%;
+  left: 10%;
   color: white;
   text-shadow: -1px 1px 2px #3D4849;
   border-radius: 4px;
   padding: 0px 2px;
   font-size: 16px;
+}
+
+/*Delete button positioning*/
+.fa-trash-alt {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  padding: 0px 2px;
+  color: white;
+  text-shadow: -1px 1px 2px #3D4849;
 }
 
 /*Editing Page CSS*/

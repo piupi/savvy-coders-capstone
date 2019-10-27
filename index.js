@@ -3,7 +3,11 @@ import * as state from "./store";
 import { Main } from "./components";
 
 //Trying something below
-import { openCameraModal } from "./camera";
+import { handleCameraModal } from "./camera";
+
+// import { closeCameraModal } from "./camera";
+
+import { deletePic } from "./camera"; //????
 
 // console.log(state)
 // console.log(Main(state.Home));
@@ -18,5 +22,7 @@ function render(st = state.Home) {
 
 render();
 
-openCameraModal();
+handleCameraModal();
+
+deletePic();
 

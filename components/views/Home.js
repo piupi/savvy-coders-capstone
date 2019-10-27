@@ -19,6 +19,8 @@ function generatePics(pics) {
   return pics.map(({src, calories}) => `
     <!-- TODO: Consider simplifying markup and just using <figure> as 'the box.' -->
     <div class="box">
+      <!-- Add delete button element to pic, click event, console log which div its trying to delete -->
+      <span class="fas fa-trash-alt"></span>
       <div class="time">10:00 am</div>
       <img src="${src}" alt="" class="food" id="box-5"></<img>
       <div class="cals">${calories}</div>
@@ -43,8 +45,9 @@ export default (st) => `
   </div>
   <div class="modal-bg is-hiding">
     <div class="modal">
+      <span class="fas fa-times fa-lg" id="back"></span>
       <p>test modal</p>
-
+    </div>
   </div>
 `
 // This is where I'm making the modal
