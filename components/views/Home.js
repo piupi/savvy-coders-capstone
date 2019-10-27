@@ -13,6 +13,7 @@
 //   `).join(" ")
 // }
 
+
 function generatePics(pics) {
   // use map and join to iterate over the pics
   return pics.map(({src, calories}) => `
@@ -40,7 +41,7 @@ export default (st) => `
     <button id="settings" type="button" class="fas fa-cog fa-l"></button>
     <button id="calendar" type="button" class="far fa-calendar-alt fa-lg"></button>
   </div>
-  <div class="modal-bg is-showing">
+  <div class="modal-bg is-hiding">
     <div class="modal">
       <p>test modal</p>
 

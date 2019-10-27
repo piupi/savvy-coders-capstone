@@ -5,31 +5,30 @@ import { db } from "../firebase";
 
 
 
-console.log("camera index.js is connected")
-
-function camera() {
+export function openCameraModal() {
   const plusButton = document.querySelector(".plus-btn");
   const modalBg = document.querySelector(".modal-bg");
   const modal = document.querySelector(".modal");
 
   plusButton.addEventListener("click", function(){
-    console.log("function is happening");
-    modalBg.classList.toggle("is-showing");
-    modalBg.classList.toggle("is-hiding");
+    console.log("+ button clicked");
     toggleModal(modalBg);
 })
 }
 
-console.log ("views Home.js connected")
-
-function toggleModal(modalBg){
+// It's a separate function so I can reuse later when exiting
+export function toggleModal(modalBg){
   modalBg.classList.toggle("is-showing");
   modalBg.classList.toggle("is-hiding");
 }
 
+// export default st => {
+//   document.querySelector(".plus-btn").addEventListener("click", () => {
+//     console.log("+ clicked");
+//   })
+// }
 
-// plusButton.addEventListener("click", toggleModal(modalBg));
 
-console.log(document.querySelector(".plus-btn"))
 // when i console.log the + button, it says null. it's always null, maybe because the js loads before the html?
 // cannot read property addeventlistener of null
+
