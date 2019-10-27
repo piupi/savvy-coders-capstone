@@ -1,7 +1,10 @@
 import { db } from "../firebase";
 
-//Trying something below... is that even a thing?
-// export { default as Camera } from "./camera";
+
+const dbCollection = db.collection("pictures");
+
+console.log("Db collection is", dbCollection)
+
 
 // It's a separate function so I can reuse when exiting
 export function toggleModal(modalBg) {
@@ -68,9 +71,11 @@ export function handleCameraModal(st) {
       //updating st.pics
       //concat returns new array unlike push
 
-
-
-      // problem: caption does not appear?
+      dbCollection.add(newPic)
+      .then(docRef => {
+        pic.id = docRef.id;
+      })
+      .catch(() => (console.log("aaaaaaaa")))
     });
   });
 }

@@ -25,6 +25,8 @@ function render(st = state.Home) {
     }
   });
 
+  //state, key, and value
+
   handleCameraModal(proxy);
 }
 
