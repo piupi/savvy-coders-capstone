@@ -91,6 +91,7 @@ export function handleCameraModal(st) {
       })
       .catch((err) => (console.log("aaaaaaaah its an error"), err))
 
+
       // dbCollection.get().then(querySnapshot =>
       //   (st.pics = querySnapshot.docs.map(doc => {
       //     const pic = doc.data();
@@ -134,7 +135,13 @@ export function deletePic() {
   delBtns.forEach(delBtn => {
     delBtn.addEventListener("click", function() {
       const div = this.closest("div");
+      // Logging div that is going to get deleted
       console.log(div);
+      // Trying to actually delete it
+      dbCollection.doc(div.dataset.id).delete().then(() => {
+        console.log("trying to delete div")
+        div.remove();
+      });
     });
   });
 }
