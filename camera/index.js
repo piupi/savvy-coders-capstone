@@ -3,6 +3,22 @@ import { db } from "../firebase";
 
 const dbCollection = db.collection("pictures");
 
+export default st => {
+ //move dbCollection.get here from handleCameraModal
+  if (st.pics.length <= 1) {
+    console.log("Pics are trying to show up")
+    dbCollection.get().then(
+      querySnapshot =>
+      (st.pics = querySnapshot.docs.map(doc => {
+        const pic = doc.data();
+        pic.id = doc.id;
+        return pic;
+      })
+    ))
+  }
+}
+
+
 
 // It's a separate function so I can reuse when exiting
 export function toggleModal(modalBg) {
@@ -80,19 +96,32 @@ export function handleCameraModal(st) {
       //     const pic = doc.data();
       //     pic.id = doc.id; // or docRef.id?
       //     return pic;
-          //should i have ID in state Home.js ??
+      //     // should i have ID in state Home.js ??
 
-      //   }))
-      // )
+      //   })) it shouldnt go here it should be in export default
+
+      //use the one below, not the one above. comment out the if
+      // if (!st.pics.length) {
+        // dbCollection.get().then(
+        //   querySnapshot =>
+        //   (st.pics = querySnapshot.docs.map(doc => {
+        //     const pic = doc.data();
+        //     pic.id = doc.id;
+        //     return pic;
+        //   })
+        // ))
+      // }
+
+
 
       st.pics = st.pics.concat([newPic]);
 
 
-      dbCollection.get().then(function(querySnapshot) {
-        querySnapshot.forEach(function(doc) {
+    //   dbCollection.get().then(function(querySnapshot) {
+    //     querySnapshot.forEach(function(doc) {
 
-        });
-    });
+    //     });
+    // });
 
     });
   });
