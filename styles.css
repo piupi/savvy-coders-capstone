@@ -258,6 +258,11 @@ img {
 div .box{
   position: relative;
   display: inline-block;
+  /*Below, trying to make square and hide overflow*/
+  width: 380px;
+  height: 380px;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
 div .cals {
