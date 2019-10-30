@@ -260,6 +260,16 @@ main {
   height: 280px;
   overflow: hidden;
   text-indent: -50px;
+
+  /* try text-align instaed of text-indent */
+  width: 280px;
+}
+
+/* Video Booth on android */
+.booth {
+  height: 280px;
+  overflow: hidden;
+  text-indent: -50px;
   width: 280px;
 }
 

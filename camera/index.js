@@ -78,7 +78,7 @@ export function handleCameraModal(st) {
 
       const newPic = {
         src: canvas.toDataURL("image/webp"),
-        calories: document.querySelector("#caption").value
+        calories: Number(document.querySelector("#caption").value)
       };
 
       //updating st.pics
