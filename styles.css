@@ -4,7 +4,6 @@ body {
 }
 
 #calendar {
-  margin-top: 4px;
   font-size: 16px;
   display: flex;
   display: inline;
@@ -12,7 +11,6 @@ body {
 
 }
 #settings {
-  margin-top: 4px;
   font-size: 16px;
   display: flex;
   display: inline;
@@ -35,9 +33,6 @@ body {
   color: #26bba6;
   display: block;
   margin: auto;
-/*Below adds a drop shadow effect*/
-  /* text-shadow: 1px 1px 0 rgb(223, 227, 229), 4px 4px 0 rgba(0, 0, 0, 0.25);
-  color: #26bba6 */
 }
 
 #add:hover {
@@ -63,38 +58,6 @@ body {
   color: #BCC4C0;
 
 }
-
-#settings:hover {
-  color:#dfdfdf;
-  outline: none;
-}
-
-#total {
-  margin: 4px;
-}
-
-/*Editing Page CSS*/
-#back {
-  color: #26bba6;
-  margin: 4%;
-}
-
-.editing-options {
-  color: #BCC4C0;
-  display: flex;
-  justify-content: space-around;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-#retake:hover {
-  color: #dfdfdf;
-}
-
-#delete:hover {
-  color: #d7d7d7;
-}
-/*Done w editing page navigation*/
 
 .navigation {
   display: flex;
@@ -145,94 +108,6 @@ button:focus {
   border-radius: 4px;
 }
 
-section {
-  background-color: #dfdfdf;
-  height: 148px;
-  border-radius: 4px;
-}
-
-
-/*Below are abandoned media queries I can't let go of yet*/
-/* Media Queries Zone  */
-/* Media query for iphone x -- MOBILE M */
-/* @media screen and (min-width: 375px) {
-  .boxes {
-    margin: 27px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-  body {
-    margin: 8px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  #total {
-    margin-right: 27px;
-  }
-
-  .navigation {
-    margin-left: 27px;
-  }
-}
-
-@media screen and (min-width: 425px) {
-  .boxes {
-    margin: 33px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  body {
-    margin: 27px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  #total {
-    margin-right: 33px;
-  }
-
-  .navigation {
-    margin-left: 33px;
-  } */
-
-
-  /* Total and navigation margins should match margin of .boxes */
-
-  /* @media screen and (min-width: 500px) {
-    .boxes {
-      margin: 0px;
-      margin-top: 0px;
-      margin-bottom: 0px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr; /*maybe start with this instead of the minmax thing*/
-      /* grid-gap: 8px;
-      grid-template-rows: auto;
-    }
-
-    body {
-      margin: 20px;
-      margin-top: 0px;
-      margin-bottom: 0px;
-    }
-
-    #total {
-      margin-right: 0px;
-    }
-
-    .navigation {
-      margin-left: 0px;
-    } */ */
-
-
-  /* 426px is when i want it to go 3 boxes wide. idk how to alter the HTML and do that? or might have to use flex wrap */
-  /*maybe just apply these to the whole body and not just .boxes. so cals and nav aligns*/
-}
-
-
-/*Trying a new way to make boxes. Everything above here is previous code. I'll clean it up later*/
-/* After doing the whole entire section below, I realize I could've just used img width: 50% float: left ... ok great */
 
 * {
   box-sizing: border-box;
@@ -253,7 +128,7 @@ img {
   display: block;
   width: 100%;
   border-radius: 4px;
-  /*Making it square without squishing*/
+  /* Making it square without squishing */
   object-fit: cover;
   height: 380px;
 
@@ -262,10 +137,10 @@ img {
 div .box{
   position: relative;
   display: inline-block;
-  /*Below, trying to make square and hide overflow*/
+  /* Below, trying to make square and hide overflow */
   width: 380px;
   height: 380px;
-  overflow: hidden; /*maybe unneeded*/
+  overflow: hidden; /*maybe unneeded */
   border-radius: 4px;
 }
 
@@ -317,23 +192,8 @@ div .time {
   text-shadow: -1px 1px 2px #3D4849;
 }
 
-/*Editing Page CSS*/
-.entry {
-  display: grid;
-  /* display: flex; */
-  margin: 5% 10%;
-  margin-top: 50px;
-  max-width: 400px;
-}
 
-main {
-  display: grid;
-  justify-items: center;
-  /* commenting that out makes navigation go back to right spot after dealing with todaysDate span*/
-  /* changing it to justify-content: center; also does that */
-}
-
-/*Camera Page CSS if using WebRTC*/
+/* Camera Page CSS if using WebRTC */
 /* .booth{
   width: 280px;
   height: 280px;
@@ -343,13 +203,10 @@ main {
   text-indent: -50px;
   overflow: hidden;
 }
-
-#video {
-
-} */
+*/
 
 
-/*IMage PReview css*/
+/* IMage PReview css */
 .img-preview {
   margin: 0 auto;
   width: 300px;
@@ -373,8 +230,8 @@ main {
   text-align: center;
 }
 
-
 /* Modal classes */
+
 /* Modal BG whites out the background */
 .modal-bg {
   position: fixed;
@@ -388,14 +245,10 @@ main {
   align-items: center;
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s opacity 0.5s;
+  transition: visibility 0s;
 }
 .modal {
   background-color: white;
-}
-
-.is-hiding {
-
 }
 
 .is-showing {
@@ -413,7 +266,7 @@ main {
 }
 
 
-/*MEDIA QUERIES ONLY below - some are broken. can't close them with curly braces or it messes EVERYTHING up. By everything I mean the alignment of the grid and boxes.*/
+/* MEDIA QUERIES ONLY below - some are broken. can't close them with curly braces or it messes EVERYTHING up. By everything I mean the alignment of the grid and boxes. */
 
 /* IPhone x media query */
 @media screen and (min-width: 375px) {
@@ -428,6 +281,7 @@ main {
   .navigation {
     margin-left: 27px;
   }
+
 
 
 /*MEDIA QUERY TIME*/
@@ -478,11 +332,8 @@ main {
 
 /*iPad media queries*/
 @media only screen
-and (min-width : 768px)
-and (max-width : 1024px)
-and (orientation : portrait) {
+and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
   .shoebox{
     grid-template-columns: 1fr 1fr;
+  }
 }
-
-
