@@ -4,6 +4,21 @@ import { db } from "../firebase";
 const dbCollection = db.collection("pictures");
 
 export default st => {
+  const delBtns = document.querySelectorAll(".fa-trash-alt");
+
+  delBtns.forEach(delBtn => {
+    // Developer's Note: Must use `function` keyword to have scoped `this`.
+    delBtn.addEventListener("click", function() {
+      const div = this.closest("div");
+      console.log(div);
+      dbCollection.doc(div.dataset.id).delete().then(() => {
+        console.log("trying to delete div")
+        div.remove();
+      });
+    });
+  });
+
+
  //move dbCollection.get here from handleCameraModal
   if (st.pics.length <= 1) {
     console.log("Pics are trying to show up")
@@ -132,19 +147,19 @@ export function handleCameraModal(st) {
 
 // Adding delete buttons to each pic
 // export default st => {
-export function deletePic() {
-  const delBtns = document.querySelectorAll(".fa-trash-alt");
-  delBtns.forEach(delBtn => {
-    delBtn.addEventListener("click", function() {
-      const div = this.closest("div");
-      // Logging div that is going to get deleted
-      console.log(div);
-      // Trying to actually delete it
-      dbCollection.doc(div.dataset.id).delete().then(() => {
-        console.log("trying to delete div")
-        div.remove();
-      });
-    });
-  });
-}
+// export function deletePic() {
+//   const delBtns = document.querySelectorAll(".fa-trash-alt");
+//   delBtns.forEach(delBtn => {
+//     delBtn.addEventListener("click", function() {
+//       const div = this.closest("div");
+//       // Logging div that is going to get deleted
+//       console.log(div);
+//       // Trying to actually delete it
+//       dbCollection.doc(div.dataset.id).delete().then(() => {
+//         console.log("trying to delete div")
+//         div.remove();
+//       });
+//     });
+//   });
+// }
 // Would it delete the box div and the child divs inside of it?

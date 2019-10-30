@@ -16,9 +16,9 @@
 
 function generatePics(pics) {
   // use map and join to iterate over the pics
-  return pics.map(({src, calories}) => `
+  return pics.map(({id, src, calories}) => `
     <!-- TODO: Consider simplifying markup and just using <figure> as 'the box.' -->
-    <div class="box">
+    <div class="box" data-id="${id}">
       <!-- Add delete button element to pic, click event, console log which div its trying to delete -->
       <span class="fas fa-trash-alt fa-sm"></span>
       <div class="time">10:00 am</div>
@@ -30,7 +30,6 @@ function generatePics(pics) {
 
 
 export default (st) => `
-<div id="todaysDate"></div>
   <div class="shoebox">
     ${generatePics(st.pics)}
   </div>
