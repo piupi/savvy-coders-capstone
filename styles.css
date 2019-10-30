@@ -1,30 +1,37 @@
 body {
-  font-family: 'Lato', sans-serif;
+  background: #ffffff;
+  font-family: "Lato", sans-serif;
   font-size: 20px;
 }
 
 #calendar {
-  font-size: 16px;
+  background-color: white;
+  border: none;
+  color: #BCC4C0;
   display: flex;
   display: inline;
+  font-size: 16px;
   justify-content: end;
-
 }
+
 #settings {
+  background-color: white;
+  border: none;
+  color: #BCC4C0;
+  display: inline-flex;
   font-size: 16px;
-  display: flex;
-  display: inline;
   justify-content: end;
+  margin-top: 4px;
 }
 
 #todaysDate {
-  text-align: center;
   color: #26bba6;
-  text-transform: uppercase;
-  font-family: 'Nunito', sans-serif;
-  font-weight: bold;
+  font-family: "Nunito", sans-serif;
   font-size: 30px;
+  font-weight: bold;
   margin-bottom: 8px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 #add {
@@ -40,23 +47,39 @@ body {
   outline: none;
 }
 
-#calendar {
-  background-color: white;
-  border: none;
-  color: #BCC4C0;
-  display: inline;
-}
-
 #calendar:hover {
   color:#dfdfdf;
   outline: none;
 }
 
-#settings {
-  background-color: white;
-  border: none;
-  color: #BCC4C0;
+#settings:hover {
+  color:#dfdfdf;
+  outline: none;
+}
 
+#total {
+  margin: 4px;
+}
+
+#back {
+  color: #26bba6;
+  margin: 4%;
+}
+
+.editing-options {
+  color: #BCC4C0;
+  display: flex;
+  justify-content: space-around;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#retake:hover {
+  color: #dfdfdf;
+}
+
+#delete:hover {
+  color: #d7d7d7;
 }
 
 .navigation {
@@ -70,7 +93,6 @@ body {
   margin: 0 auto;
 }
 
-/*Removing ugly blue border after clicking icons*/
 a:focus {
   outline: none;
 }
@@ -79,43 +101,30 @@ button:focus {
   outline: none;
 }
 
-/* COMMENCE INDECISIVENESS*/
-/* For buttons to change color when clicked, should I use :active, :focus, or :hover?  */
-
 /* Trying grid-template-columns which is supposed to be cool */
 .boxes {
   display: grid;
-  /* grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); */
-  grid-template-columns: 1fr 1fr; /*maybe start with this instead of the minmax thing*/
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 8px;
   grid-template-rows: auto;
-  /* object-fit: cover;  --- put this if images are stretching out gross*/
-  /* height: 200px; */
-
-  /* below is for iphone x, make a media query. also move cal total to the right! */
-/*
-  margin: 27px;
-  margin-top: 0px;
-  margin-bottom: 0px; */
-
 }
 
 .food-picture {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
   border-radius: 4px;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
+section {
+  background-color: #dfdfdf;
+  border-radius: 4px;
+  height: 148px;
+}
 
 * {
   box-sizing: border-box;
-}
-
-body {
-  background: #ffffff;
-  border: 0px;
 }
 
 .shoebox {
@@ -125,99 +134,90 @@ body {
 }
 
 img {
-  display: block;
-  width: 100%;
   border-radius: 4px;
-  /* Making it square without squishing */
-  object-fit: cover;
+  display: block;
   height: 380px;
-
+  object-fit: cover;
+  width: 100%;
 }
 
-div .box{
-  position: relative;
-  display: inline-block;
-  /* Below, trying to make square and hide overflow */
-  width: 380px;
-  height: 380px;
-  overflow: hidden; /*maybe unneeded */
+div .box {
   border-radius: 4px;
+  display: inline-block;
+  height: 380px;
+  overflow: hidden;
+  position: relative;
+  width: 380px;
 }
 
 div .cals {
-  position: absolute;
-  bottom: 4%;
-  right: 4%;
-  color: #26bba6;
   background-color: white;
   border-radius: 4px;
-  padding: 0px 2px;
+  bottom: 4%;
+  color: #26bba6;
   font-size: 16px;
   font-weight: bold;
+  padding: 0 2px;
+  position: absolute;
+  right: 4%;
 }
 
 /* Below is if I'm sticking with figcaption  */
 figcaption {
-  position: absolute;
-  margin: 0;
-  bottom: 4%;
-  right: 4%;
-  color: #26bba6;
   background-color: white;
   border-radius: 4px;
-  padding: 0px 2px;
+  bottom: 4%;
+  color: #26bba6;
   font-size: 16px;
   font-weight: bold;
+  margin: 0;
+  padding: 0 2px;
+  position: absolute;
+  right: 4%;
 }
 
-/* TODO{vanessa.krathovik}: Consider using `<time>` tag instead of over-specifying with <div> */
 div .time {
-  position: absolute;
-  top: 2%;
-  left: 10%;
-  color: white;
-  text-shadow: -1px 1px 2px #3D4849;
   border-radius: 4px;
-  padding: 0px 2px;
-  font-size: 16px;
-}
-
-/*Delete button positioning*/
-.fa-trash-alt {
-  position: absolute;
-  top: 2%;
-  left: 2%;
-  padding: 0px 2px;
   color: white;
+  font-size: 16px;
+  left: 10%;
+  padding: 0 2px;
+  position: absolute;
+  text-shadow: -1px 1px 2px #3d4849;
+  top: 2%;
+}
+
+.fa-trash-alt {
+  color: white;
+  left: 2%;
+  padding: 0 2px;
+  position: absolute;
   text-shadow: -1px 1px 2px #3D4849;
+  top: 2%;
 }
 
-
-/* Camera Page CSS if using WebRTC */
-/* .booth{
-  width: 280px;
-  height: 280px;
-  border: 4px solid #3D4849;
-  margin: 0 auto;
-  margin-top: 80px;
-  text-indent: -50px;
-  overflow: hidden;
-}
-*/
-
-
-/* IMage PReview css */
-.img-preview {
-  margin: 0 auto;
-  width: 300px;
-  height: 300px;
-  border: 2px solid #3D4849;
+.entry {
+  display: grid;
+  margin: 5% 10%;
   margin-top: 50px;
-  display: flex;
+  max-width: 400px;
+}
+
+main {
+  display: grid;
+  justify-items: center;
+}
+
+.img-preview {
   align-items: center;
+  border: 2px solid #3d4849;
+  display: flex;
+  height: 300px;
   justify-content: center;
-  /* object-fit: cover; */
+  margin: 0 auto;
+  margin-top: 50px;
   overflow: hidden;
+  width: 300px;
 }
 
 .img-preview__img {
@@ -231,22 +231,21 @@ div .time {
 }
 
 /* Modal classes */
-
-/* Modal BG whites out the background */
 .modal-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
+  align-items: center;
   background: rgba(78, 78, 78, 0.5);
   display: flex;
+  height: 100vh;
   justify-content: center;
-  align-items: center;
-  visibility: hidden;
+  left: 0;
   opacity: 0;
+  position: fixed;
+  top: 0;
   transition: visibility 0s;
+  visibility: hidden;
+  width: 100%;
 }
+
 .modal {
   background-color: white;
 }
@@ -258,20 +257,16 @@ div .time {
 
 /* Video Booth */
 .booth {
-  width: 280px;
   height: 280px;
-  /* border: 4px solid #3D4849; */
-  text-indent: -50px;
   overflow: hidden;
+  text-indent: -50px;
+  width: 280px;
 }
-
-
-/* MEDIA QUERIES ONLY below - some are broken. can't close them with curly braces or it messes EVERYTHING up. By everything I mean the alignment of the grid and boxes. */
 
 /* IPhone x media query */
 @media screen and (min-width: 375px) {
   .shoebox {
-    margin: 0px 27px;
+    margin: 0 27px;
   }
 
   #total {
@@ -281,29 +276,28 @@ div .time {
   .navigation {
     margin-left: 27px;
   }
+}
 
-
-
-/*MEDIA QUERY TIME*/
 @media screen and (min-width: 600px) {
   * {
-      box-sizing: border-box;
-
+    box-sizing: border-box;
   }
+
   body {
     background: #ffffff;
-    border: 0px;
-}
+  }
+
   .shoebox {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 8px;
-    margin: 0px 8%;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 8%;
   }
+
   img {
+    border-radius: 4px;
     display: block;
     width: 100%;
-    border-radius: 4px;
   }
 
   #total {
@@ -315,11 +309,11 @@ div .time {
   }
 }
 
-
 @media screen and (min-width: 900px) {
   .shoebox {
-    margin: 0px 24%;
+    margin: 0 24%;
   }
+
   #total {
     margin-right: 24%;
   }
@@ -329,11 +323,8 @@ div .time {
   }
 }
 
-
-/*iPad media queries*/
-@media only screen
-and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
-  .shoebox{
-    grid-template-columns: 1fr 1fr;
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .shoebox {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
