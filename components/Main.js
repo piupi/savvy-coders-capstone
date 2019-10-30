@@ -1,9 +1,8 @@
 import * as views from "./views";
 
 export default (st) => `
-
+<div id="todaysDate"></div>
   <main>
-  <div id="todaysDate"></div>
     ${views[st.view](st)}
   </main>
 `
@@ -12,3 +11,6 @@ export default (st) => `
 // ->
 
 {/* <div id="todaysDate"><span id="todaysDate"></span></div> */}
+
+// Leaving the date span in there makes page misaligned AF
+// <div id="todaysDate"></div>

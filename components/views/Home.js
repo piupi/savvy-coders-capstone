@@ -20,7 +20,7 @@ function generatePics(pics) {
     <!-- TODO: Consider simplifying markup and just using <figure> as 'the box.' -->
     <div class="box">
       <!-- Add delete button element to pic, click event, console log which div its trying to delete -->
-      <span class="fas fa-trash-alt"></span>
+      <span class="fas fa-trash-alt fa-sm"></span>
       <div class="time">10:00 am</div>
       <img src="${src}" alt="" class="food" id="box-5"></<img>
       <div class="cals">${calories}</div>
@@ -30,6 +30,7 @@ function generatePics(pics) {
 
 
 export default (st) => `
+<div id="todaysDate"></div>
   <div class="shoebox">
     ${generatePics(st.pics)}
   </div>
@@ -50,10 +51,9 @@ export default (st) => `
       <div class="booth">
         <video id="video" width="380"></video>
       </div>
-      <p>test modal</p>
       <div>
         <label for="caption">calories</label>
-        <input type="text" id="caption"/>
+        <input type="number" id="caption"/>
       </div>
       <button class="fas fa-check" id="take-pic"></button>
     </div>
