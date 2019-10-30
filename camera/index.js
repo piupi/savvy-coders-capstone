@@ -88,6 +88,8 @@ export function handleCameraModal(st) {
       .then(docRef => {
         console.log('pic in add is', newPic)
         newPic.id = docRef.id;
+        // Log timestamp to see if it even gets it
+        console.log(firebase.firestore.Timestamp.fromDate(new Date()));
       })
       .catch((err) => (console.log("aaaaaaaah its an error"), err))
 

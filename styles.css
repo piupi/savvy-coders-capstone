@@ -98,7 +98,7 @@ body {
 
 .navigation {
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
   max-width: 60px;
 }
 
@@ -253,6 +253,10 @@ img {
   display: block;
   width: 100%;
   border-radius: 4px;
+  /*Making it square without squishing*/
+  object-fit: cover;
+  height: 380px;
+
 }
 
 div .box{
@@ -261,7 +265,7 @@ div .box{
   /*Below, trying to make square and hide overflow*/
   width: 380px;
   height: 380px;
-  overflow: hidden;
+  overflow: hidden; /*maybe unneeded*/
   border-radius: 4px;
 }
 
@@ -325,6 +329,8 @@ div .time {
 main {
   display: grid;
   justify-items: center;
+  /* commenting that out makes navigation go back to right spot after dealing with todaysDate span*/
+  /* changing it to justify-content: center; also does that */
 }
 
 /*Camera Page CSS if using WebRTC*/
