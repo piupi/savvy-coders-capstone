@@ -10,6 +10,7 @@ import { deletePic } from "./camera"; //????
 
 // trying to import default from ./camera/index.js
 import camera from "./camera";
+import { POINT_CONVERSION_COMPRESSED } from "constants";
 
 
 // console.log(state)
@@ -54,3 +55,8 @@ deletePic();
 
 
 
+
+// For-loop for total
+for (i=0; i < pics.length; i++){
+  total += calories[i]
+}

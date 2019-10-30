@@ -266,12 +266,12 @@ main {
 }
 
 /* Video Booth on android */
-.booth {
+/* .booth {
   height: 280px;
   overflow: hidden;
   text-indent: -50px;
   width: 280px;
-}
+} */
 
 /* IPhone x media query */
 @media screen and (min-width: 375px) {
