@@ -61,8 +61,9 @@ export default (st) => `
       <div class="cal-input-box">
 
         <input type="number" id="caption" placeholder="calories" />
+        <button class="fas fa-check fa-lg" id="take-pic"></button>
       </div>
-      <button class="fas fa-check fa-lg" id="take-pic"></button>
+
     </div>
   </div>
 `
