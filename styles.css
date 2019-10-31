@@ -79,7 +79,7 @@ body {
 .cal-input-box {
   display: flex;
   justify-content: space-around;
-  margin: 16px 16px;
+  margin: 8px 8px;
 }
 
 input[type="number"] {
@@ -281,7 +281,7 @@ main {
 .modal {
   background-color: white;
   border-radius: 4px;
-  margin-top: 50px;
+  margin-top: 47px;
 }
 
 .is-showing {
