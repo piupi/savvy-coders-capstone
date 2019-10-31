@@ -265,7 +265,7 @@ main {
 /* Modal classes */
 .modal-bg {
   align-items: start;
-  background: rgba(78, 78, 78, 0.5);
+  background: rgba(78, 78, 78, 0.6);
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -281,7 +281,7 @@ main {
 .modal {
   background-color: white;
   border-radius: 4px;
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
 .is-showing {
