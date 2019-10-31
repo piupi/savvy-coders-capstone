@@ -58,16 +58,15 @@ export default (st) => `
       <div class="booth">
         <video id="video" width="380"></video>
       </div>
-      <div>
-        <label for="caption">calories</label>
-        <input type="number" id="caption"/>
+      <div class="cal-input-box">
+
+        <input type="number" id="caption" placeholder="calories" />
       </div>
-      <button class="fas fa-check" id="take-pic"></button>
+      <button class="fas fa-check fa-lg" id="take-pic"></button>
     </div>
   </div>
 `
-// This is where I'm making the modal
-// Might need to wrap this in another modal like "modal-bg" to grey out bg
 
+{/* <label for="caption">calories</label> */}
 
 

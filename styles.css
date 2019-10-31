@@ -66,6 +66,35 @@ body {
   margin: 4%;
 }
 
+#take-pic {
+  color: #26bba6;
+  margin: 4%;
+  border: none;
+  background: white;
+  float: right;
+}
+
+.cal-input-box {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+input[type="number"] {
+  font-size: 20px;
+  text-indent: 8px;
+  width: 150px;
+  height: 32px;
+  letter-spacing: 4px;
+}
+
+::placeholder {
+  font-size: 18px;
+  text-indent: 8px;
+  font-style: italic;
+  letter-spacing: 4px;
+}
+
 .editing-options {
   color: #BCC4C0;
   display: flex;
@@ -248,6 +277,7 @@ main {
 
 .modal {
   background-color: white;
+  border-radius: 4px;
 }
 
 .is-showing {
