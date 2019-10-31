@@ -10,7 +10,9 @@ import { deletePic } from "./camera"; //????
 
 // trying to import default from ./camera/index.js
 import camera from "./camera";
-import { POINT_CONVERSION_COMPRESSED } from "constants";
+// import { POINT_CONVERSION_COMPRESSED } from "constants";
+
+// i dunno what that is UHHHHHHHHHH WHAT
 
 
 // console.log(state)
@@ -51,12 +53,16 @@ function render(st = state.Home) {
 render();
 // add argument state.Home when trying out camera proxy thing?? or st
 
-deletePic();
+// deletePic();
 
 
 
 
-// For-loop for total
-for (i=0; i < pics.length; i++){
-  total += calories[i]
-}
+// Getting the total
+
+// need ot use map and reduce or just reduce
+// array with all the calories
+// then u map
+// map, filter reduce or
+// filter, map, reduce
+

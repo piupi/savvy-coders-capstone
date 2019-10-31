@@ -28,13 +28,21 @@ function generatePics(pics) {
   `).join(" ")
 }
 
+function calculateTotal(pics) {
+  let output = 0;
+pics.forEach(pic => {
+  output += pic.calories;
+})
+  return output;
+}
+
 
 export default (st) => `
   <div class="shoebox">
     ${generatePics(st.pics)}
   </div>
   <div>
-    <p id="total" align="right">cal total of day here</p>
+    <p id="total" align="right">${calculateTotal(st.pics)}</p>
   </div>
   <button class="plus-btn" name="add" id="add" id="fa-plus"">
     <span class="fas fa-plus fa-3x"></span>
