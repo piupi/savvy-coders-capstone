@@ -313,14 +313,15 @@ main {
     /* height: 300px; */
     overflow: hidden;
     width: 280px;
-    /* object-fit: cover;
-    object-position: center; */
+    object-fit: cover;
+    object-position: center;
   }
 
   #video {
-    height: 280px;
-    width: 180px;
+    /* height: 280px; */
+    width: 300px;
     /* if that width doesnt work try making vid bigger than booth */
+    /*  try not setting height only width as 280 */
   }
 }
 
