@@ -7,12 +7,11 @@ export default st => {
   const delBtns = document.querySelectorAll(".fa-trash-alt");
 
   delBtns.forEach(delBtn => {
-    // Developer's Note: Must use `function` keyword to have scoped `this`.
     delBtn.addEventListener("click", function() {
+      console.log(st.pics);
       const div = this.closest("div");
-      console.log(div);
       dbCollection.doc(div.dataset.id).delete().then(() => {
-        console.log("trying to delete div")
+        console.log("deleting this div:", div);
         div.remove();
       });
     });
@@ -22,7 +21,8 @@ export default st => {
  //move dbCollection.get here from handleCameraModal
   if (st.pics.length <= 1) {
     console.log("Pics are trying to show up")
-    dbCollection.get().then(
+    // replace .orderBy with timestamp or remove
+    dbCollection.orderBy('calories').get().then(
       querySnapshot =>
       (st.pics = querySnapshot.docs.map(doc => {
         const pic = doc.data();
@@ -89,77 +89,34 @@ export function handleCameraModal(st) {
 
       toggleModal(modalBg); // Modal closes after checkmark is clicked
 
-      console.log(document.querySelector("#caption").value);
 
       const newPic = {
         src: canvas.toDataURL("image/webp"),
         calories: Number(document.querySelector("#caption").value)
       };
 
+
       //updating st.pics
       //concat returns new array unlike push
-
-      dbCollection.add(newPic)
+      return new Promise(resolve => {
+        dbCollection.add(newPic)
       .then(docRef => {
         console.log('pic in add is', newPic)
         newPic.id = docRef.id;
-        // Log timestamp to see if it even gets it
-        console.log(firebase.firestore.Timestamp.fromDate(new Date()));
+        st.pics = st.pics.concat([newPic]);
+        resolve(newPic);
       })
-      .catch((err) => (console.log("aaaaaaaah its an error"), err))
+      .catch(err => {
+        (console.log("aaaaaaaah its an error"), err);
+        resolve(newPic);
+      })
+    })
 
-
-      // dbCollection.get().then(querySnapshot =>
-      //   (st.pics = querySnapshot.docs.map(doc => {
-      //     const pic = doc.data();
-      //     pic.id = doc.id; // or docRef.id?
-      //     return pic;
-      //     // should i have ID in state Home.js ??
-
-      //   })) it shouldnt go here it should be in export default
-
-      //use the one below, not the one above. comment out the if
-      // if (!st.pics.length) {
-        // dbCollection.get().then(
-        //   querySnapshot =>
-        //   (st.pics = querySnapshot.docs.map(doc => {
-        //     const pic = doc.data();
-        //     pic.id = doc.id;
-        //     return pic;
-        //   })
-        // ))
-      // }
-
-
-
-      st.pics = st.pics.concat([newPic]);
-
-
-    //   dbCollection.get().then(function(querySnapshot) {
-    //     querySnapshot.forEach(function(doc) {
-
-    //     });
-    // });
 
     });
   });
 }
 
-// Adding delete buttons to each pic
-// export default st => {
-// export function deletePic() {
-//   const delBtns = document.querySelectorAll(".fa-trash-alt");
-//   delBtns.forEach(delBtn => {
-//     delBtn.addEventListener("click", function() {
-//       const div = this.closest("div");
-//       // Logging div that is going to get deleted
-//       console.log(div);
-//       // Trying to actually delete it
-//       dbCollection.doc(div.dataset.id).delete().then(() => {
-//         console.log("trying to delete div")
-//         div.remove();
-//       });
-//     });
-//   });
-// }
-// Would it delete the box div and the child divs inside of it?
+export function postPic() {
+
+}
