@@ -309,8 +309,8 @@ main {
 
   /* Video Booth on android */
   .booth {
-    /* height: 300px; */
     height: 280px;
+    /* height: 300px; */
     overflow: hidden;
     width: 280px;
     /* object-fit: cover;
@@ -318,7 +318,7 @@ main {
   }
 
   #video {
-    /* height: 280px; */
+    height: 280px;
     width: 280px;
   }
 }
