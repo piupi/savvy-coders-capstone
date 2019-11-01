@@ -13,6 +13,8 @@ export default st => {
       dbCollection.doc(div.dataset.id).delete().then(() => {
         console.log("deleting this div:", div);
         div.remove();
+        // Below fixes bug where if you delete a pic, then take one, the "deleted" one reappears
+        st.pics = st.pics.filter(pic => pic.id !== div.dataset.id);
       });
     });
   });
