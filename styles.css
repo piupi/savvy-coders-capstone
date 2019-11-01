@@ -312,8 +312,6 @@ main {
     height: 280px;
     overflow: hidden;
     width: 280px;
-    /* object-fit: cover;
-    object-position: center; */
     display: flex;
     align-items: center;
   }
@@ -365,6 +363,8 @@ main {
     overflow: hidden;
     text-indent: -50px;
     width: 280px;
+    display: flex;
+    justify-content: center;
   }
 
   #video {
