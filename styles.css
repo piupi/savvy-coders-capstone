@@ -172,7 +172,6 @@ section {
 img {
   border-radius: 4px;
   display: block;
-  height: 150px;
   object-fit: cover;
   width: 100%;
 }
@@ -180,10 +179,8 @@ img {
 div .box {
   border-radius: 4px;
   display: inline-block;
-  height: 150px;
   overflow: hidden;
   position: relative;
-  width: 150px;
 }
 
 div .cals {
@@ -293,6 +290,18 @@ main {
   opacity: 1;
 }
 
+/* Media query for 320px wide phone */
+@media screen and (min-width: 320px) {
+  img {
+    height: 140px;
+  }
+
+  div .box {
+    width: 140px;
+    height: 140px;
+  }
+}
+
 /* IPhone x media query */
 @media screen and (min-width: 375px) {
   /* .shoebox {
@@ -319,6 +328,15 @@ main {
   #video {
     width: 280px;
   }
+
+  img {
+    height: 165px;
+  }
+
+  div .box {
+    width: 165px;
+    height: 165px;
+  }
 }
 
 @media screen and (min-width: 600px) {
@@ -341,12 +359,12 @@ main {
     border-radius: 4px;
     display: block;
     width: 100%;
-    height: 200px;
+    height: 210px;
   }
 
   div .box {
-    height: 200px;
-    width: 200px;
+    height: 210px;
+    width: 210px;
   }
 
   #total {
