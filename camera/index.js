@@ -25,7 +25,7 @@ export default st => {
   if (st.pics.length <= 1) {
     console.log("Pics are trying to show up")
     // replace .orderBy with timestamp or remove
-    dbCollection.orderBy('calories').get().then(
+    dbCollection.orderBy('timeAdded').get().then(
       querySnapshot =>
       (st.pics = querySnapshot.docs.map(doc => {
         const pic = doc.data();
@@ -52,11 +52,9 @@ export function handleCameraModal(st) {
   const closeButton = document.querySelector(".fa-times");
 
   plusButton.addEventListener("click", function() {
-    // console.log("+ button clicked");
     toggleModal(modalBg);
 
     closeButton.addEventListener("click", function() {
-      // console.log("X button clicked");
       modalBg.classList.remove("is-showing");
       // It closes once but won't close twice if .I give it toggleModal
       // toggleModal(modalBg);
@@ -93,17 +91,31 @@ export function handleCameraModal(st) {
       toggleModal(modalBg); // Modal closes after checkmark is clicked
 
       // Trying to add firebase time
-      const timestampMilliseconds = Date.parse(new Date())
-      let fTimestamp = new firebase.firestore.Timestamp.fromMillis(timestampMilliseconds);
-      console.log("Timestamp when pic was added: ", fTimestamp);
+      // const timestampMilliseconds = Date.parse(new Date())
+      // let fTimestamp = new firebase.firestore.Timestamp.fromMillis(timestampMilliseconds);
+      // console.log("Timestamp when pic was added: ", fTimestamp);
+
+      const d = Date(Date.now);
+      // console.log(d.toString())
+
+      function humanTime(){
+        const time = new Date(Date.now());
+        return time.toLocaleTimeString().replace(/:\d+ /, ' ');
+      }
 
       const newPic = {
         src: canvas.toDataURL("image/webp"),
         calories: Number(document.querySelector("#caption").value),
-        // Tryna get time
-        timeAdded: fTimestamp
+        timeAdded: Date.now()
+        // Put d or humanTime() or Date.now() in timeAdded
       };
 
+      // humanTime is only for humans
+      // Date.now() is for firebase, but map to get human readable date
+
+      // grab the date.now
+      // map over it
+      // change to humanTime
 
       //updating st.pics
       //concat returns new array unlike push
@@ -113,13 +125,9 @@ export function handleCameraModal(st) {
         console.log('pic in add is', newPic)
         newPic.id = docRef.id;
         st.pics = st.pics.concat([newPic]);
+        // An attempt to map with humanTime. You can only see the change in timeAdded when you open the object that console logs.
+        st.pics = st.pics.map(newPic.timeAdded = humanTime());
         resolve(newPic);
-        // Trying to add firebase time
-        // const timestampMilliseconds = Date.parse(new Date())
-        // let fTimestamp = new firebase.firestore.Timestamp.fromMillis(timestampMilliseconds);
-        // console.log("Timestamp when pic was added: ", fTimestamp);
-        // newTime.id = docRef.id;
-        // st.pics = st.pics.concat([newTime])
       })
       .catch(err => {
         (console.log("aaaaaaaah its an error"), err);
@@ -135,3 +143,5 @@ export function handleCameraModal(st) {
 export function postPic() {
 
 }
+
+
