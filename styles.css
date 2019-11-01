@@ -293,24 +293,6 @@ main {
   opacity: 1;
 }
 
-/* Video Booth */
-.booth {
-  height: 280px;
-  overflow: hidden;
-  text-indent: -50px;
-
-  /* try text-align instaed of text-indent */
-  width: 280px;
-}
-
-/* Video Booth on android */
-/* .booth {
-  height: 280px;
-  overflow: hidden;
-  text-indent: -50px;
-  width: 280px;
-} */
-
 /* IPhone x media query */
 @media screen and (min-width: 375px) {
   /* .shoebox {
@@ -323,6 +305,21 @@ main {
 
   .navigation {
     margin-left: 27px;
+  }
+
+  /* Video Booth on android */
+  .booth {
+    /* height: 300px; */
+    height: 280px;
+    overflow: hidden;
+    width: 280px;
+    /* object-fit: cover;
+    object-position: center; */
+  }
+
+  #video {
+    /* height: 280px; */
+    width: 280px;
   }
 }
 
@@ -360,6 +357,18 @@ main {
 
   .navigation {
     margin-left: 8%;
+  }
+
+  /* Video Booth on big screen */
+  .booth {
+    height: 280px;
+    overflow: hidden;
+    text-indent: -50px;
+    width: 280px;
+  }
+
+  #video {
+    width: 380px;
   }
 }
 
