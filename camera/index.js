@@ -106,8 +106,9 @@ export function handleCameraModal(st) {
       const newPic = {
         src: canvas.toDataURL("image/webp"),
         calories: Number(document.querySelector("#caption").value),
-        timeAdded: Date.now()
+        timeAdded: Date.now(),
         // Put d or humanTime() or Date.now() in timeAdded
+        prettyTime: humanTime()
       };
 
       const fTimestamp = Date.now()
