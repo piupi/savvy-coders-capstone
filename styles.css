@@ -312,12 +312,13 @@ main {
     height: 280px;
     overflow: hidden;
     width: 280px;
-    object-fit: cover;
-    object-position: center;
+    /* object-fit: cover;
+    object-position: center; */
+    display: flex;
+    align-items: center;
   }
 
   #video {
-    height: 380px;
     width: 280px;
   }
 }
