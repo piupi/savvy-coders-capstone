@@ -1,4 +1,5 @@
 import { db } from "../firebase";
+import firebase from "@firebase/app";
 
 
 const dbCollection = db.collection("pictures");
@@ -91,10 +92,16 @@ export function handleCameraModal(st) {
 
       toggleModal(modalBg); // Modal closes after checkmark is clicked
 
+      // Trying to add firebase time
+      const timestampMilliseconds = Date.parse(new Date())
+      let fTimestamp = new firebase.firestore.Timestamp.fromMillis(timestampMilliseconds);
+      console.log("Timestamp when pic was added: ", fTimestamp);
 
       const newPic = {
         src: canvas.toDataURL("image/webp"),
-        calories: Number(document.querySelector("#caption").value)
+        calories: Number(document.querySelector("#caption").value),
+        // Tryna get time
+        timeAdded: fTimestamp
       };
 
 
@@ -107,6 +114,12 @@ export function handleCameraModal(st) {
         newPic.id = docRef.id;
         st.pics = st.pics.concat([newPic]);
         resolve(newPic);
+        // Trying to add firebase time
+        // const timestampMilliseconds = Date.parse(new Date())
+        // let fTimestamp = new firebase.firestore.Timestamp.fromMillis(timestampMilliseconds);
+        // console.log("Timestamp when pic was added: ", fTimestamp);
+        // newTime.id = docRef.id;
+        // st.pics = st.pics.concat([newTime])
       })
       .catch(err => {
         (console.log("aaaaaaaah its an error"), err);

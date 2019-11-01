@@ -4,6 +4,10 @@ body {
   font-size: 20px;
 }
 
+canvas {
+  display: none;
+}
+
 #calendar {
   background-color: white;
   border: none;

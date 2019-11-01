@@ -16,12 +16,12 @@
 
 function generatePics(pics) {
   // use map and join to iterate over the pics
-  return pics.map(({id, src, calories}) => `
+  return pics.map(({id, src, calories, timeAdded}) => `
     <!-- TODO: Consider simplifying markup and just using <figure> as 'the box.' -->
     <div class="box" data-id="${id}">
       <!-- Add delete button element to pic, click event, console log which div its trying to delete -->
       <span class="fas fa-trash-alt fa-sm"></span>
-      <div class="time">10:00 am</div>
+      <div class="time">${timeAdded}</div>
       <img src="${src}" alt="" class="food" id="box-5"></<img>
       <div class="cals">${calories}</div>
     </div>
