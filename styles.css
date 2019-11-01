@@ -310,7 +310,6 @@ main {
   /* Video Booth on android */
   .booth {
     height: 280px;
-    /* height: 300px; */
     overflow: hidden;
     width: 280px;
     object-fit: cover;
@@ -318,10 +317,8 @@ main {
   }
 
   #video {
-    /* height: 280px; */
-    width: 300px;
-    /* if that width doesnt work try making vid bigger than booth */
-    /*  try not setting height only width as 280 */
+    /* width: 280px; */
+    width: 380px;
   }
 }
 
