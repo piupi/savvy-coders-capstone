@@ -110,6 +110,10 @@ export function handleCameraModal(st) {
         // Put d or humanTime() or Date.now() in timeAdded
       };
 
+      const fTimestamp = Date.now()
+      const formattedTime = humanTime(fTimestamp)
+      console.log(formattedTime)
+
       // humanTime is only for humans
       // Date.now() is for firebase, but map to get human readable date
 
@@ -126,8 +130,10 @@ export function handleCameraModal(st) {
         newPic.id = docRef.id;
         st.pics = st.pics.concat([newPic]);
         // An attempt to map with humanTime. You can only see the change in timeAdded when you open the object that console logs.
-        st.pics = st.pics.map(newPic.timeAdded = humanTime());
-        resolve(newPic);
+        // st.pics = st.pics.map(newPic.timeAdded = humanTime());
+        // Another attempt
+        // newPic.timeAdded = newPic.timeAdded.map(humanTime(fTimestamp));
+        // resolve(newPic);
       })
       .catch(err => {
         (console.log("aaaaaaaah its an error"), err);
