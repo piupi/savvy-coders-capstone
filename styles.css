@@ -319,7 +319,8 @@ main {
 
   #video {
     height: 280px;
-    /* width: 280px; just take out the width? or make it smaller? */
+    width: 180px;
+    /* if that width doesnt work try making vid bigger than booth */
   }
 }
 
