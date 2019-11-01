@@ -318,8 +318,8 @@ main {
   }
 
   #video {
-    height: 180px;
-    width: 280px;
+    height: 280px;
+    /* width: 280px; just take out the width? or make it smaller? */
   }
 }
 
