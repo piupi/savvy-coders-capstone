@@ -318,7 +318,8 @@ main {
 
   #video {
     /* width: 280px; */
-    width: 380px;
+    width: 280px;
+    height: 480px;
   }
 }
 
