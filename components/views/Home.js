@@ -41,7 +41,7 @@ export default (st) => `
   <div class="shoebox">
     ${generatePics(st.pics)}
   </div>
-  <div>
+  <div id="total-box">
     <p id="total" align="right">${calculateTotal(st.pics)}</p>
   </div>
   <button class="plus-btn" name="add" id="add" id="fa-plus"">

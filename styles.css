@@ -61,9 +61,6 @@ canvas {
   outline: none;
 }
 
-#total {
-  margin: 4px;
-}
 
 #back {
   color: #26bba6;
@@ -290,7 +287,20 @@ main {
   opacity: 1;
 }
 
-/* Media query for 320px wide phone */
+#total {
+  margin: 4px;
+  font-size: 24px;
+  color:  #3d4849;
+  font-family: "Nunito";
+}
+
+#total-box {
+  display: flex;
+  justify-content: flex-end;
+  width: 290px;
+}
+
+/* Small phones */
 @media screen and (min-width: 320px) {
   img {
     height: 140px;
@@ -302,21 +312,13 @@ main {
   }
 }
 
-/* IPhone x media query */
+/* Medium phones */
 @media screen and (min-width: 375px) {
-  /* .shoebox {
-    margin: 0 27px;
-  } */
-
-  #total {
-    margin-right: 27px;
-  }
-
   .navigation {
     margin-left: 27px;
   }
 
-  /* Video Booth on android */
+  /* Video booth on android */
   .booth {
     height: 280px;
     overflow: hidden;
@@ -330,12 +332,16 @@ main {
   }
 
   img {
-    height: 165px;
+    height: 162px;
   }
 
   div .box {
-    width: 165px;
-    height: 165px;
+    width: 162px;
+    height: 162px;
+  }
+
+  #total-box {
+    width: 336px;
   }
 }
 
@@ -352,7 +358,6 @@ main {
     display: grid;
     grid-gap: 8px;
     grid-template-columns: 1fr 1fr 1fr;
-
   }
 
   img {
@@ -367,15 +372,15 @@ main {
     width: 210px;
   }
 
-  #total {
-    margin-right: 8%;
+  #total-box {
+    width: 650px;
   }
 
   .navigation {
     margin-left: 8%;
   }
 
-  /* Video Booth on big screen */
+  /* Video booth on large screens */
   .booth {
     height: 280px;
     overflow: hidden;
@@ -395,10 +400,6 @@ main {
     margin: 0 24%;
   }
 
-  #total {
-    margin-right: 24%;
-  }
-
   .navigation {
     margin-left: 24%;
   }
@@ -407,5 +408,9 @@ main {
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   .shoebox {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  #total-box {
+    width: 288px;
   }
 }
