@@ -117,8 +117,14 @@ input[type="number"] {
 
 .navigation {
   display: flex;
-  justify-content: start;
-  max-width: 60px;
+  justify-content: flex-start;
+  align-items: center;
+  width: 290px;
+  position: fixed;
+  bottom: 8px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
 }
 
 #placeholder-img {
@@ -315,7 +321,7 @@ main {
 /* Medium phones */
 @media screen and (min-width: 375px) {
   .navigation {
-    margin-left: 27px;
+    width: 336px;
   }
 
   /* Video booth on android */
@@ -377,7 +383,7 @@ main {
   }
 
   .navigation {
-    margin-left: 8%;
+    width: 650px;
   }
 
   /* Video booth on large screens */
@@ -399,10 +405,6 @@ main {
   .shoebox {
     margin: 0 24%;
   }
-
-  .navigation {
-    margin-left: 24%;
-  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
@@ -411,6 +413,10 @@ main {
   }
 
   #total-box {
-    width: 288px;
+    width: 432px;
+  }
+
+  .navigation {
+    width: 432px;
   }
 }
