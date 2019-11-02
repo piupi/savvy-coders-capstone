@@ -120,11 +120,14 @@ input[type="number"] {
   justify-content: flex-start;
   align-items: center;
   width: 290px;
-  position: fixed;
-  bottom: 8px;
+  position: relative;
+  height: 20px;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0 auto;
+  clear: both;
+  background: white;
+  /* padding-top: 20px; */
 }
 
 #placeholder-img {
