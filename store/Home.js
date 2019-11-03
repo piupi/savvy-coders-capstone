@@ -2,8 +2,8 @@ export default {
   view: "Home",
   pics: [
     {
-      src: "http://i.imgur.com/KPpZeId.jpg",
-      calories: 999
+      src: "https://i.imgur.com/Rlfll41.png",
+      calories: ""
     }
   ]
 }
