@@ -39,17 +39,9 @@ canvas {
   color: #26bba6;
 }
 
+#calendar:hover,
+#settings:hover,
 #add:hover {
-  color: #dfdfdf;
-  outline: none;
-}
-
-#calendar:hover {
-  color: #dfdfdf;
-  outline: none;
-}
-
-#settings:hover {
   color: #dfdfdf;
   outline: none;
 }
