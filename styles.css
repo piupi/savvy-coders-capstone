@@ -1,5 +1,5 @@
 body {
-  background: #ffffff;
+  background: #fff;
   font-family: "Lato", sans-serif;
   font-size: 20px;
 }
@@ -11,21 +11,16 @@ canvas {
 #calendar {
   background-color: white;
   border: none;
-  color: #BCC4C0;
-  display: flex;
-  display: inline;
+  color: #bcc4c0;
   font-size: 16px;
-  justify-content: end;
 }
 
 #settings {
   background-color: white;
   border: none;
-  color: #BCC4C0;
-  display: inline-flex;
+  color: #bcc4c0;
   font-size: 16px;
-  justify-content: end;
-  margin-top: 4px;
+  margin-top: 3px;
 }
 
 #todaysDate {
@@ -42,25 +37,22 @@ canvas {
   background-color: white;
   border: none;
   color: #26bba6;
-  display: block;
-  margin: auto;
 }
 
 #add:hover {
-  color:#dfdfdf;
+  color: #dfdfdf;
   outline: none;
 }
 
 #calendar:hover {
-  color:#dfdfdf;
+  color: #dfdfdf;
   outline: none;
 }
 
 #settings:hover {
-  color:#dfdfdf;
+  color: #dfdfdf;
   outline: none;
 }
-
 
 #back {
   color: #26bba6;
@@ -69,11 +61,8 @@ canvas {
 
 #take-pic {
   color: #26bba6;
-  /* margin: 4%; */
   border: none;
   background: white;
-  /* float: right; */
-  /* display: inline-block; */
   padding: 0;
 }
 
@@ -99,63 +88,16 @@ input[type="number"] {
   letter-spacing: 4px;
 }
 
-.editing-options {
-  color: #BCC4C0;
-  display: flex;
-  justify-content: space-around;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-#retake:hover {
-  color: #dfdfdf;
-}
-
-#delete:hover {
-  color: #d7d7d7;
-}
-
 .navigation {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   width: 290px;
-  margin-top: 22px;
-}
-
-#placeholder-img {
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-a:focus {
-  outline: none;
+  margin-top: 24px;
 }
 
 button:focus {
   outline: none;
-}
-
-/* Trying grid-template-columns which is supposed to be cool */
-.boxes {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 8px;
-  grid-template-rows: auto;
-}
-
-.food-picture {
-  border-radius: 4px;
-  display: block;
-  height: 100%;
-  object-fit: cover;
-  width: 100%;
-}
-
-section {
-  background-color: #dfdfdf;
-  border-radius: 4px;
-  height: 148px;
 }
 
 * {
@@ -183,26 +125,12 @@ div .box {
 }
 
 div .cals {
-  background-color: white;
+  background-color: #fff;
   border-radius: 4px;
   bottom: 4%;
   color: #26bba6;
   font-size: 16px;
   font-weight: bold;
-  padding: 0 2px;
-  position: absolute;
-  right: 4%;
-}
-
-/* Below is if I'm sticking with figcaption  */
-figcaption {
-  background-color: white;
-  border-radius: 4px;
-  bottom: 4%;
-  color: #26bba6;
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
   padding: 0 2px;
   position: absolute;
   right: 4%;
@@ -224,42 +152,13 @@ div .time {
   left: 2%;
   padding: 0 2px;
   position: absolute;
-  text-shadow: -1px 1px 2px #3D4849;
+  text-shadow: -1px 1px 2px #3d4849;
   top: 3%;
-}
-
-.entry {
-  display: grid;
-  margin: 5% 10%;
-  margin-top: 50px;
-  max-width: 400px;
 }
 
 main {
   display: grid;
   justify-items: center;
-}
-
-.img-preview {
-  align-items: center;
-  border: 2px solid #3d4849;
-  display: flex;
-  height: 300px;
-  justify-content: center;
-  margin: 0 auto;
-  margin-top: 50px;
-  overflow: hidden;
-  width: 300px;
-}
-
-.img-preview__img {
-  display: none;
-  width: 100%;
-  object-fit: cover;
-}
-
-#custom-text {
-  text-align: center;
 }
 
 /* Modal classes */
@@ -273,7 +172,7 @@ main {
   opacity: 0;
   position: fixed;
   top: 0;
-  transition: visibility 0s;
+  transition: 0.1s ease-in;
   visibility: hidden;
   width: 100%;
 }
@@ -292,8 +191,8 @@ main {
 #total {
   margin: 4px;
   font-size: 24px;
-  color:  #3d4849;
-  font-family: "Nunito";
+  color: #3d4849;
+  font-family: "Nunito", sans-serif;
 }
 
 #total-box {
@@ -348,14 +247,6 @@ main {
 }
 
 @media screen and (min-width: 600px) {
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    background: #ffffff;
-  }
-
   .shoebox {
     display: grid;
     grid-gap: 8px;
@@ -363,9 +254,6 @@ main {
   }
 
   img {
-    border-radius: 4px;
-    display: block;
-    width: 100%;
     height: 210px;
   }
 
