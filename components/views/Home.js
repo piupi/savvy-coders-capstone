@@ -23,7 +23,7 @@ export default (st) => `
     ${generatePics(st.pics)}
   </div>
   <div id="total-box">
-    <p id="total" align="right">${calculateTotal(st.pics)}</p>
+    <p id="total" align="right">total: ${calculateTotal(st.pics)}</p>
   </div>
   <button class="plus-btn" id="add" id="fa-plus">
     <span class="fas fa-plus fa-3x"></span>
