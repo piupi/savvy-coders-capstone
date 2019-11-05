@@ -203,6 +203,8 @@ main {
   background-color: white;
   border-radius: 4px;
   margin-top: 47px;
+  height: 366px;
+  width: 237px;
 }
 
 .calendar-is-showing {

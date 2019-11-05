@@ -48,8 +48,8 @@ export default (st) => `
   <div class="calendar-modal-bg calendar-hiding">
     <div class="calendar-modal">
     <span class="fas fa-times fa-lg calendarClose" id="back"></span>
-    <p>Calendar coming soon :) Might look like this</p>
-    <img src="https://i.imgur.com/ZYTofIE.png" id="calendar-img"></img>
+    <p>Calendar coming soon :)</p>
+    <img src="https://i.imgur.com/3JO1NFw.png" id="calendar-img"></img>
     </div>
   </div>
 `
