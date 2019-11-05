@@ -119,8 +119,9 @@ export function handleCameraModal(st) {
     })
     });
       // Turns off video stream when camera modal is closed
-      modalBg.addEventListener("transitionend", () => {
-          video.srcObject.getTracks().forEach(track => track.stop());
-      });
+      // This only works on desktop, causes black video on android when typing calories
+      // modalBg.addEventListener("transitionend", () => {
+      //     video.srcObject.getTracks().forEach(track => track.stop());
+      // });
   });
 }
