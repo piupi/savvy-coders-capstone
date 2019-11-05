@@ -125,3 +125,18 @@ export function handleCameraModal(st) {
       // });
   });
 }
+
+
+export function calendarModal() {
+  const calendarBtn = document.querySelector("#calendar")
+  const calendarModalBg = document.querySelector(".calendar-modal-bg");
+  const calendarClose = document.querySelector(".calendarClose");
+
+  calendarBtn.addEventListener("click", function() {
+    calendarModalBg.classList.add("calendar-is-showing");
+  })
+    calendarClose.addEventListener("click", function() {
+      calendarModalBg.classList.remove("calendar-is-showing");
+      // It closes once but won't close twice if you use toggleModal.
+    });
+  }
