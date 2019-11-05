@@ -74,6 +74,8 @@ export function handleCameraModal(st) {
       });
 
     document.querySelector("#take-pic").addEventListener("click", () => {
+      // Prevents bug of multiple pics being taken when modal is opened multiple times.
+      event.stopImmediatePropagation();
       canvas.width = video.videoWidth;
       canvas.height = video.videoHeight;
 
