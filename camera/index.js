@@ -118,5 +118,9 @@ export function handleCameraModal(st) {
       })
     })
     });
+      // Turns off video stream when camera modal is closed
+      modalBg.addEventListener("transitionend", () => {
+          video.srcObject.getTracks().forEach(track => track.stop());
+      });
   });
 }
