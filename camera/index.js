@@ -6,6 +6,20 @@ const dbCollection = db.collection("pictures");
 
 export default st => {
   const delBtns = document.querySelectorAll(".fa-trash-alt");
+  const plusButton = document.querySelector(".plus-btn");
+  const modalBg = document.querySelector(".modal-bg");
+  const closeButton = document.querySelector(".fa-times");
+
+
+
+  plusButton.addEventListener("click", function() {
+    toggleModal(modalBg);
+  })
+
+  closeButton.addEventListener("click", function() {
+    modalBg.classList.remove("is-showing");
+    // It closes once but won't close twice if you use toggleModal.
+  });
 
   // Delete pictures from Firebase and page.
   delBtns.forEach(delBtn => {
@@ -36,28 +50,34 @@ export default st => {
 }
 
 // Toggle modal.
-export function toggleModal(modalBg) {
+function toggleModal(modalBg) {
   modalBg.classList.toggle("is-showing");
-  modalBg.classList.toggle("is-hiding");
+  modalBg.classList.toggle("is-hiding"); // Not sure if this line does anything.
+  console.log("modal was opened");
 }
+
+function getHumanTime(){
+  const time = new Date(Date.now());
+  return time.toLocaleTimeString().replace(/:\d+ /, ' ');
+}
+
+
 
 export function handleCameraModal(st) {
   console.log("camera modal received state:", st)
-  const plusButton = document.querySelector(".plus-btn");
   const modalBg = document.querySelector(".modal-bg");
-  const closeButton = document.querySelector(".fa-times");
-
-  plusButton.addEventListener("click", function() {
-    toggleModal(modalBg);
-
-    closeButton.addEventListener("click", function() {
-      modalBg.classList.remove("is-showing");
-      // It closes once but won't close twice if you use toggleModal.
-    });
 
     //WebRTC below.
     const video = document.querySelector("#video");
     const canvas = document.querySelector("canvas");
+
+
+
+    function stopVideo() {
+      video.srcObject.getTracks().forEach(track => track.stop())
+      // or getVideoTracks?
+    }
+
 
     navigator.mediaDevices
       .getUserMedia({
@@ -66,12 +86,18 @@ export function handleCameraModal(st) {
         height: 400
       })
       .then(function(localMediaStream) {
+        console.log(localMediaStream);
+        // localMediaStream.getVideoTracks()[0].stop();
         video.srcObject = localMediaStream;
         video.play();
+        // localMediaStream.getVideoTracks()[0].stop(); // this one works! but not here. then the thing is just off
       })
       .catch(function(err) {
         console.log("Error: " + err);
       });
+      // video.srcObject.getTracks().forEach(track => track.stop())
+
+
 
     document.querySelector("#take-pic").addEventListener("click", () => {
       canvas.width = video.videoWidth;
@@ -83,11 +109,9 @@ export function handleCameraModal(st) {
         .drawImage(video, 0, 0, canvas.width, canvas.height);
 
       toggleModal(modalBg); // Modal closes after check mark is clicked.
+      // modalBg.classList.add("is-hiding");
 
-      function getHumanTime(){
-        const time = new Date(Date.now());
-        return time.toLocaleTimeString().replace(/:\d+ /, ' ');
-      }
+      event.stopImmediatePropagation();
 
       const newPic = {
         src: canvas.toDataURL("image/webp"),
@@ -114,7 +138,29 @@ export function handleCameraModal(st) {
         (console.log("Aaaaaaaah its an error"), err);
         resolve(newPic);
       })
+
+
+      // stopVideo();
+
+
+
+    //   window.srcObject.getVideoTracks().forEach(function(track) {
+    //     track.stop();
+    // });
+
+
+
     })
+
     });
-  });
+    modalBg.addEventListener("transitionend", () => {
+      if (modalBg.classList.contains("is-hiding")) {
+        console.log("modalBg is hiding")
+        localMediaStream.getVideoTracks()[0].stop();
+
+      }
+    });
+
+
 }
+
