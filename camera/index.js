@@ -126,7 +126,7 @@ export function handleCameraModal(st) {
   });
 }
 
-
+// TODO: Move this elsewhere.
 export function calendarModal() {
   const calendarBtn = document.querySelector("#calendar")
   const calendarModalBg = document.querySelector(".calendar-modal-bg");

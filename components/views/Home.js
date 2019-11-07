@@ -55,5 +55,4 @@ export default (st) => `
 `
 
 
-// onclick="window.open('https://i.imgur.com/3JO1NFw.png', '_blank')"
 
