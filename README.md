@@ -1,7 +1,11 @@
 # [foodjournal.netlify.com](https://foodjournal.netlify.com/)
 
 
-An alternative to typical calorie tracking apps. It's a combination of a calorie tracker and visual food diary built with JavaScript, HTML5, CSS, and the WebRTC API. Pictures are stored with Firebase.
+An alternative to typical calorie tracking apps. It's a combination of a calorie tracker and visual food diary built with JavaScript, HTML5, CSS, and the WebRTC API. Pictures are stored with Firebase. **Mobile** responsive web app that currently works with Android phones and will be compatible with iPhones in the near future.
+
+&nbsp;
+
+***
 
 &nbsp;
 
@@ -36,14 +40,15 @@ An alternative to typical calorie tracking apps. It's a combination of a calorie
 ## _**Target audience**_
 People who want a visual of their eating habits and an easy way to track meals.
 
+&nbsp;
 ## _**Why?**_
-If you have ever tried to go on a diet you know how frustrating it can be to track your calories and even moreso keep up with it over an extended period of time. This app is taking something that's tedious and making it more visually appealing and easier to use. If you have to stop and take a picture it would make you more mindful of what you're about to eat. It's a visual reminder of how you use your calories.
+If you have ever tried to go on a diet you know how frustrating it can be to track your calories and even moreso keep up with it over an extended period of time. This app is taking something that's tedious and making it more visually appealing and easier to use. Stopping to take a picture of what you're about to eat makes you much more mindful. It's a visual reminder of how you use your calories.
 
 &nbsp;
 ***
 &nbsp;
 ## _**Outline of the content**_
-#### I wrote this a long time ago and it's no longer entirely accurate. I'll update it soon!
+#### I wrote this a long time ago and it's no longer entirely accurate. Things have changed. I'll update this documentation soon I swear!! [In the meantime please just go look at it](https://foodjournal.netlify.com/).
 #### Camera Page
 * The user will mostly be opening the app just to quickly add another meal, so the camera is the first thing that opens. After a photo is taken, the number keyboard comes up and the user can type the calories.
 
@@ -76,3 +81,19 @@ If you have ever tried to go on a diet you know how frustrating it can be to tra
 * User login
 * Body measurements / goals? (might add this feature later on along with weight tracking)
 
+&nbsp;
+***
+&nbsp;
+## _**Features to implement**_
+* So many.
+* Eventually use NativeScript to make this a native phone app.
+* The biggest one would be a Calendar you can pick a date from (user can go back and look at another day), label a day good/bad (green/red) so user can see how they did overall. View previous months and track progress overall. User could notice patterns like if they have a lot of “red” days on the weekends or something. Perhaps with Google Calendar API.
+* Set eating reminders?
+* Nutritionix Nutrition API for the calorie count of common foods and branded grocery foods.
+* Weight tracking.
+* iPhone compatibility.
+* Track symptoms like migraines, bloating, etc so you can narrow down which foods caused it.
+* Improved UI showing the calorie total better, animations.
+* Perhaps the ability to share your food diary.
+* The ability to store foods you eat often so you can just add them without having to look up the calories again.
+* There's more but I have to go now.
