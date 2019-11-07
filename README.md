@@ -4,11 +4,8 @@
 An alternative to typical calorie tracking apps. It's a combination of a calorie tracker and visual food diary built with JavaScript, HTML5, CSS, and the WebRTC API. Pictures are stored with Firebase. **Mobile** responsive web app that currently works with Android phones and will be compatible with iPhones in the near future.
 
 &nbsp;
-
 ***
-
 &nbsp;
-
 ## _**Trello**_
 
 * [Trello board](https://trello.com/b/i1uZ9SaZ)
