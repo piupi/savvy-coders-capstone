@@ -10,7 +10,6 @@ export default st => {
   // Delete pictures from Firebase and page.
   delBtns.forEach(delBtn => {
     delBtn.addEventListener("click", function() {
-      console.log("st.pics is:", st.pics);
       const div = this.closest("div");
       dbCollection.doc(div.dataset.id).delete().then(() => {
         console.log("Deleting this div:", div);
@@ -42,7 +41,7 @@ export function toggleModal(modalBg) {
 }
 
 export function handleCameraModal(st) {
-  console.log("camera modal received state:", st)
+  console.log("Camera modal received state:", st)
   const plusButton = document.querySelector(".plus-btn");
   const modalBg = document.querySelector(".modal-bg");
   const closeButton = document.querySelector(".fa-times");
