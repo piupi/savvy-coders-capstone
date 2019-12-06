@@ -1,4 +1,4 @@
-import { db } from "../firebase";
+import { db, auth } from "../firebase";
 import firebase from "@firebase/app";
 
 
@@ -125,7 +125,7 @@ export function handleCameraModal(st) {
   });
 }
 
-// TODO: Move this elsewhere.
+// TODO: Move this elsewhere and refactor.
 export function calendarModal() {
   const calendarBtn = document.querySelector("#calendar")
   const calendarModalBg = document.querySelector(".calendar-modal-bg");
@@ -139,3 +139,31 @@ export function calendarModal() {
       // It closes once but won't close twice if you use toggleModal.
     });
   }
+
+// TODO: Move and refactor.
+export function userModal() {
+  const userBtn = document.querySelector("#settings")
+  const userModalBg = document.querySelector(".user-modal-bg");
+  const userClose = document.querySelector(".userClose");
+
+  userBtn.addEventListener("click", function() {
+    userModalBg.classList.add("user-is-showing");
+  })
+    userClose.addEventListener("click", function() {
+      userModalBg.classList.remove("user-is-showing");
+      // It closes once but won't close twice if you use toggleModal.
+    });
+  }
+
+// // Logs user in.
+// auth.signInWithEmailAndPassword(email, pass);
+
+// // Creates user and logs them in.
+// auth.createUserWithEmailAndPassword(email, pass);
+
+// // But those only resolve one time, use different auth method.
+
+// auth.onAuthStateChanged(firebaseUser => {});
+// // Whether user logs in or out itll trigger this callbk
+// // If user logs in this firebaseUser parameter will be populated with current users info.
+// // If user logs out this frbaseuser parameter will be null.

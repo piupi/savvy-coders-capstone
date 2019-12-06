@@ -45,14 +45,30 @@ export default (st) => `
       </div>
     </div>
   </div>
-  <div class="calendar-modal-bg calendar-hiding">
+  <div class="calendar-modal-bg">
     <div class="calendar-modal">
     <span class="fas fa-times fa-lg calendarClose" id="back"></span>
     <p>Calendar coming soon :)</p>
     <img src="https://i.imgur.com/3JO1NFw.png" id="calendar-img"></img>
     </div>
   </div>
+  <div class="user-modal-bg is-hiding">
+    <div class="user-modal">
+    <span class="fas fa-times fa-lg userClose" id="back"></span>
+    <p>Temporary login!</p>
+    <div class="user">
+    <input id="txtEmail" type="email" placeholder="email">
+    <input id="txtPassword" type="password" placeholder="password" required>
+    <button id="btnLogin" class="">
+      Log In
+    </button>
+    <button id="btnSignUp" class="">
+      Sign Up
+    </button>
+    <button id="btnLogout" class="">
+      Log Out
+    </button>
+    </div>
+  </div>
 `
-
-
 

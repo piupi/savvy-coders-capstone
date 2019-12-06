@@ -1,6 +1,6 @@
 import * as state from "./store";
 import { Main } from "./components";
-import { handleCameraModal, calendarModal } from "./camera";
+import { handleCameraModal, calendarModal, userModal } from "./camera";
 import camera from "./camera";
 
 
@@ -24,6 +24,8 @@ function render(st = state.Home) {
   camera(proxy);
 
   calendarModal();
+
+  userModal();
 }
 
 render();
