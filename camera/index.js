@@ -10,13 +10,18 @@ export default st => {
   // Delete pictures from Firebase and page.
   delBtns.forEach(delBtn => {
     delBtn.addEventListener("click", function() {
-      const div = this.closest("div");
-      dbCollection.doc(div.dataset.id).delete().then(() => {
-        console.log("Deleting this div:", div);
-        div.remove();
-        // Below fixes bug where if you delete a pic then take one, the "deleted" one reappears.
-        st.pics = st.pics.filter(pic => pic.id !== div.dataset.id);
-      });
+      // Confirm deletion.
+      // TODO: Dialogue can't be styled. Create element to mimic confirm() or use a framework (Alertify?)
+      const answer = confirm("Want to delete this item?");
+      if (answer) {
+        const div = this.closest("div");
+        dbCollection.doc(div.dataset.id).delete().then(() => {
+          console.log("Deleting this div:", div);
+          div.remove();
+          // Below fixes bug where if you delete a pic then take one, the "deleted" one reappears.
+          st.pics = st.pics.filter(pic => pic.id !== div.dataset.id);
+        });
+      }
     });
   });
 
