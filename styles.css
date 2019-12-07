@@ -96,18 +96,11 @@ input[type="email"] {
 .user button {
   background-color: #dfdfdf;
   color: #3d4849;
-  /* border: 1px solid #3d4849; */
   height: 32px;
   width: 150px;
   border-radius: 4px;
   font-size: 16px;
   border: 1px solid #bcc4c0;
-  /* display: flex;
-  justify-content: space-around; */
-}
-
-.user button:hover {
-  color: #bcc4c0;
 }
 
 button:focus {
@@ -118,6 +111,10 @@ button:hover,
 span:hover {
   transform: scale(0.9);
   color: #dfdfdf;
+}
+
+.user button:hover {
+  color: #bcc4c0;
 }
 
 * {
@@ -291,6 +288,10 @@ main {
 
 #btnSignUp:hover {
   color: #D7EADE;
+}
+
+.hide {
+  visibility: hidden;
 }
 
 #total {

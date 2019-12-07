@@ -160,15 +160,64 @@ export function userModal() {
     });
   }
 
-// // Logs user in.
-// auth.signInWithEmailAndPassword(email, pass);
+// Firebase auth, needs to be moved.
+export function fbAuth() {
+  const txtEmail = document.getElementById('txtEmail');
+  const txtPassword = document.getElementById('txtPassword');
+  const btnLogin = document.getElementById('btnLogin');
+  const btnSignUp = document.getElementById('btnSignUp');
+  const btnLogout = document.getElementById('btnLogout');
+  const userModalBg = document.querySelector(".user-modal-bg");
 
-// // Creates user and logs them in.
-// auth.createUserWithEmailAndPassword(email, pass);
+  // Log in.
+  btnLogin.addEventListener('click', e => {
+    // Get email and pass.
+    const email = txtEmail.value;
+    const pass = txtPassword.value;
+    const auth = firebase.auth();
+    // If I move those 3 variables up a scope, "email is badly formatted" error
+    // Sign in
+    const promise = auth.signInWithEmailAndPassword(email, pass);
+    console.log("Logged in", email)
+    userModalBg.classList.remove("user-is-showing");
+    promise.catch(e => console.log(e.message));
+  });
 
-// // But those only resolve one time, use different auth method.
+  // TODO: Refactor this repetitive ugliness.
+  // Sign up.
+  btnSignUp.addEventListener('click', e => {
+    //TODO: Check for real emails. Also verify emails.
+    // Get email and pass.
+    const email = txtEmail.value;
+    const pass = txtPassword.value;
+    const auth = firebase.auth();
+    // If I move those 3 variables up a scope, "email is badly formatted"
+    const promise = auth.createUserWithEmailAndPassword(email, pass);
+    console.log("Signed up", email)
+    userModalBg.classList.remove("user-is-showing");
+    promise.catch(e => console.log(e.message));
+  });
 
-// auth.onAuthStateChanged(firebaseUser => {});
-// // Whether user logs in or out itll trigger this callbk
-// // If user logs in this firebaseUser parameter will be populated with current users info.
-// // If user logs out this frbaseuser parameter will be null.
+  //Logout.
+  btnLogout.addEventListener('click', e => {
+    // Signs out currently authenticated user.
+    firebase.auth().signOut();
+    txtEmail.value = ('');
+    txtPassword.value = ('');
+  });
+
+  // Real time auth listener.
+  firebase.auth().onAuthStateChanged(firebaseUser => {
+    if(firebaseUser) {
+      console.log(firebaseUser); // Logs twice, hmmm
+      btnLogout.classList.remove('hide');
+    } else {
+      console.log("Nobody's logged in");
+      btnLogout.classList.add('hide');
+    }
+  });
+
+  //TODO: Hide text inputs and login/signup btns when logged in. Try ('form').reset()?
+}
+
+

@@ -54,19 +54,20 @@ export default (st) => `
   </div>
   <div class="user-modal-bg is-hiding">
     <div class="user-modal">
-    <span class="fas fa-times fa-lg userClose" id="back"></span>
-    <div class="user">
-    <input id="txtEmail" type="email" placeholder="email">
-    <input id="txtPassword" type="password" placeholder="password" required>
-    <button id="btnSignUp" class="">
-    Sign Up
-    </button>
-    <button id="btnLogin" class="">
-      Log In
-    </button>
-    <button id="btnLogout" class="">
-      Log Out
-    </button>
+      <span class="fas fa-times fa-lg userClose" id="back"></span>
+      <div class="user">
+        <input id="txtEmail" type="email" placeholder="email">
+        <input id="txtPassword" type="password" placeholder="password" required>
+        <button id="btnSignUp" class="">
+          Sign Up
+        </button>
+        <button id="btnLogin" class="">
+          Log In
+        </button>
+        <button id="btnLogout" class="hide">
+          Log Out
+        </button>
+      </div>
     </div>
   </div>
 `

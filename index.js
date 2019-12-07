@@ -2,6 +2,7 @@ import * as state from "./store";
 import { Main } from "./components";
 import { handleCameraModal, calendarModal, userModal } from "./camera";
 import camera from "./camera";
+import { fbAuth } from "./camera";
 
 
 function render(st = state.Home) {
@@ -26,6 +27,8 @@ function render(st = state.Home) {
   calendarModal();
 
   userModal();
+
+  fbAuth();
 }
 
 render();
