@@ -55,15 +55,14 @@ export default (st) => `
   <div class="user-modal-bg is-hiding">
     <div class="user-modal">
     <span class="fas fa-times fa-lg userClose" id="back"></span>
-    <p>Temporary login!</p>
     <div class="user">
     <input id="txtEmail" type="email" placeholder="email">
     <input id="txtPassword" type="password" placeholder="password" required>
+    <button id="btnSignUp" class="">
+    Sign Up
+    </button>
     <button id="btnLogin" class="">
       Log In
-    </button>
-    <button id="btnSignUp" class="">
-      Sign Up
     </button>
     <button id="btnLogout" class="">
       Log Out
