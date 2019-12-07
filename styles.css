@@ -39,6 +39,8 @@ canvas {
   color: #26bba6;
 }
 
+/* TODO: Too repetitive, refactor all :hover s */
+
 #calendar:hover,
 #settings:hover,
 #add:hover {
@@ -100,6 +102,12 @@ input[type="email"] {
 
 button:focus {
   outline: none;
+}
+
+button:hover,
+span:hover {
+  transform: scale(0.9);
+  color: #dfdfdf;
 }
 
 * {
