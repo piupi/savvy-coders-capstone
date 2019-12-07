@@ -29,7 +29,7 @@ export default (st) => `
     <span class="fas fa-plus fa-3x"></span>
   </button>
   <div class="navigation">
-    <button id="settings" type="button" class="fas fa-cog fa-l"></button>
+    <button id="settings" type="button" class="fas fa-user fa-lg"></button>
     <button id="calendar" type="button" class="far fa-calendar-alt fa-lg"></button>
   </div>
   <canvas></canvas>
